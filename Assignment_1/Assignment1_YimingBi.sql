@@ -61,6 +61,6 @@ From Production.Product
 Where Name Like '[SPO][^K]%'
 Order By Name
 
--- Question 12 £¿£¿
+-- Question 12
 Select Distinct IsNULL(ProductSubcategoryID, 0) 'ProductSubcategoryID', IsNULL(Color, 'N/A') 'Color'
 From Production.Product
