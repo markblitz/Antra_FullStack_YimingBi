@@ -10,7 +10,7 @@ String. I will use an Enum with multiple strings.
 A person's salary:
 Double. I am preparing for a super rich user.
 A book's ISBN:
-String. ISBN needs check digit calculation based on digits.
+String. ISBN needs to check digit calculation based on digits.
 A book's price:
 Float. Using the two digits after the decimal point.
 A book's shipping weight:
@@ -27,6 +27,7 @@ Value type directly holds the value and doesn't allow NULL value. It is stored i
 Reference type holds the pointer for the value and allows NULL value. It is stored in heap memory.
 
 3. What is meant by the terms managed resource and unmanaged resource in .NET
-
+Managed resource can be controlled by the garbage collector while unmanaged resource can't be. The expense of unmanaged resource should be released manually. The objects that use unmanaged resources should have the methods to release the unmanaged resource.
 
 4. Whats the purpose of Garbage Collector in .NET?
+It provides an automatic controller for memory and helps developers use memory more securely and efficiently.
