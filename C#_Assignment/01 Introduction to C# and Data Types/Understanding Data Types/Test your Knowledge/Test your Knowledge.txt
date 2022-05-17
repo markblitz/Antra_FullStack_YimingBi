@@ -1,0 +1,32 @@
+1. What type would you choose for the following "numbers"?
+A person's telephone number:
+String. A person's phone number is a number but I want it not to join any computation.
+A person's height:
+Float. Accurate enough for either in meter or inch unit.
+A person's age:
+Byte. According to Wikipedia, the oldest people lived 122 years.
+A person's gender (Male, Female, Prefer Not To Answer):
+String. I will use an Enum with multiple strings.
+A person's salary:
+Double. I am preparing for a super rich user.
+A book's ISBN:
+String. ISBN needs check digit calculation based on digits.
+A book's price:
+Float. Using the two digits after the decimal point.
+A book's shipping weight:
+Float. Using several digits after the decimal point.
+A country's population:
+Int. An int (even uint) number is not enough to count the world population but this number is big enough for one country. According to Wikipedia again, China only has 1,412,600,000. 
+The number of stars in the universe:
+Double. Only because it has the largest MAXVALUE. I personally believe that the amount of stars in the universe is unlimited.
+The number of employees in each of the small or medium businesses in the United Kingdom (up to about 50,000 employees per business):
+Int. An array of int numbers.
+
+2. What are the difference between value type and reference type variables? What is boxing and unboxing?
+Value type directly holds the value and doesn't allow NULL value. It is stored in stack memory.
+Reference type holds the pointer for the value and allows NULL value. It is stored in heap memory.
+
+3. What is meant by the terms managed resource and unmanaged resource in .NET
+
+
+4. Whats the purpose of Garbage Collector in .NET?
