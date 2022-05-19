@@ -1,0 +1,17 @@
+1. When to use String vs. StringBuilder in C# ?
+String is stored in stack. Each time a string is changed, a new instance is created. StringBuilder is stored in heap and can be changed without creating new instance. 
+
+2. What is the base class for all arrays in C#?
+Object.
+
+3. How do you sort an array in C#?
+Using the sort method bulit in array class.
+
+4. What property of an array object can be used to get the total number of elements in an array?
+Length
+
+5. Can you store multiple data types in System.Array?
+No. Multiple data types can be stored in an array of object since object is the base of all other types.
+
+6. What's the difference between the System.Array.CopyTo() and System.Array.Clone()?
+Clone() returns a new array while CopyTo() copy the elements to an existing array.

@@ -1,0 +1,15 @@
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\obj\Debug\net6.0\Question6.csproj.AssemblyReference.cache
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\obj\Debug\net6.0\Question6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\obj\Debug\net6.0\Question6.AssemblyInfoInputs.cache
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\obj\Debug\net6.0\Question6.AssemblyInfo.cs
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\obj\Debug\net6.0\Question6.csproj.CoreCompileInputs.cache
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\bin\Debug\net6.0\Question6.exe
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\bin\Debug\net6.0\Question6.deps.json
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\bin\Debug\net6.0\Question6.runtimeconfig.json
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\bin\Debug\net6.0\Question6.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\bin\Debug\net6.0\Question6.pdb
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\obj\Debug\net6.0\Question6.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\obj\Debug\net6.0\refint\Question6.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\obj\Debug\net6.0\Question6.pdb
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\obj\Debug\net6.0\Question6.genruntimeconfig.cache
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\C#_Assignment\Question6\obj\Debug\net6.0\ref\Question6.dll
