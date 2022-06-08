@@ -1,0 +1,12 @@
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Core\bin\Debug\net6.0\CRMApp.Core.deps.json
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Core\bin\Debug\net6.0\CRMApp.Core.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Core\bin\Debug\net6.0\CRMApp.Core.pdb
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Core\obj\Debug\net6.0\CRMApp.Core.csproj.AssemblyReference.cache
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Core\obj\Debug\net6.0\CRMApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Core\obj\Debug\net6.0\CRMApp.Core.AssemblyInfoInputs.cache
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Core\obj\Debug\net6.0\CRMApp.Core.AssemblyInfo.cs
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Core\obj\Debug\net6.0\CRMApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Core\obj\Debug\net6.0\CRMApp.Core.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Core\obj\Debug\net6.0\refint\CRMApp.Core.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Core\obj\Debug\net6.0\CRMApp.Core.pdb
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Core\obj\Debug\net6.0\ref\CRMApp.Core.dll

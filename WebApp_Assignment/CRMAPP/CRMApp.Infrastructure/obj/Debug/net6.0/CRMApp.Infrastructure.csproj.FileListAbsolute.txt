@@ -1,0 +1,15 @@
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\bin\Debug\net6.0\CRMApp.Infrastructure.deps.json
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\bin\Debug\net6.0\CRMApp.Infrastructure.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\bin\Debug\net6.0\CRMApp.Infrastructure.pdb
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\bin\Debug\net6.0\CRMApp.Core.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\bin\Debug\net6.0\CRMApp.Core.pdb
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\obj\Debug\net6.0\CRMApp.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\obj\Debug\net6.0\CRMApp.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\obj\Debug\net6.0\CRMApp.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\obj\Debug\net6.0\CRMApp.Infrastructure.AssemblyInfo.cs
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\obj\Debug\net6.0\CRMApp.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\obj\Debug\net6.0\CRMApp.Infrastructure.csproj.CopyComplete
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\obj\Debug\net6.0\CRMApp.Infrastructure.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\obj\Debug\net6.0\refint\CRMApp.Infrastructure.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\obj\Debug\net6.0\CRMApp.Infrastructure.pdb
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.Infrastructure\obj\Debug\net6.0\ref\CRMApp.Infrastructure.dll
