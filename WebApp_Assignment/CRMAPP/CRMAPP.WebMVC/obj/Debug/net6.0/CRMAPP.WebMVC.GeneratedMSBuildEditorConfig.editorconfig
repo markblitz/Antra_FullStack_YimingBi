@@ -15,12 +15,40 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMAPP.WebMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/blitz/Documents/GitHub/Antra_FullStack_YimingBi/WebApp_Assignment/CRMAPP/CRMAPP.WebMVC/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/blitz/Documents/GitHub/Antra_FullStack_YimingBi/WebApp_Assignment/CRMAPP/CRMAPP.WebMVC/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/blitz/Documents/GitHub/Antra_FullStack_YimingBi/WebApp_Assignment/CRMAPP/CRMAPP.WebMVC/Views/Employee/Card.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/blitz/Documents/GitHub/Antra_FullStack_YimingBi/WebApp_Assignment/CRMAPP/CRMAPP.WebMVC/Views/Employee/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/blitz/Documents/GitHub/Antra_FullStack_YimingBi/WebApp_Assignment/CRMAPP/CRMAPP.WebMVC/Views/Employee/Table.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcVGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/blitz/Documents/GitHub/Antra_FullStack_YimingBi/WebApp_Assignment/CRMAPP/CRMAPP.WebMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/blitz/Documents/GitHub/Antra_FullStack_YimingBi/WebApp_Assignment/CRMAPP/CRMAPP.WebMVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/blitz/Documents/GitHub/Antra_FullStack_YimingBi/WebApp_Assignment/CRMAPP/CRMAPP.WebMVC/Views/Region/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaW9uXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/blitz/Documents/GitHub/Antra_FullStack_YimingBi/WebApp_Assignment/CRMAPP/CRMAPP.WebMVC/Views/Region/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaW9uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/blitz/Documents/GitHub/Antra_FullStack_YimingBi/WebApp_Assignment/CRMAPP/CRMAPP.WebMVC/Views/Shared/Error.cshtml]

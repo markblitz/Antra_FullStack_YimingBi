@@ -1,0 +1,26 @@
+﻿@model IEnumerable<EmployeeResponseModel>
+<h1 class="display-6">Employee Cards</h1>
+<hr />
+
+<div class="container">
+    <div class="row">
+        @foreach (var employee in Model)
+        {
+            <div class="col mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="@employee.PhotoPath" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@employee.TitleOfCourtesy @employee.FirstName @employee.LastName</h5>
+                        <p class="card-text">Join on: @employee.HireDate<br> From: @employee.City<br> Contact at: @employee.Phone</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="row">
+        <div class="col">
+            <a asp-action="Create" asp-controller="Employee" class="btn btn-primary">Create new employee</a>
+        </div>
+    </div>
+</div>

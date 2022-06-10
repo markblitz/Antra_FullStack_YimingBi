@@ -49,9 +49,11 @@ namespace CRMApp.Core.Entity
         [Column(TypeName = "varchar(24)")]
         public string Phone { get; set; }
 
-        public int ReportsTo { get; set; }
+        public int? ReportsTo { get; set; }
 
         [Column(TypeName = "ntext")]
         public string PhotoPath { get; set; }
+
+        public Region Region { get; set; }
     }
 }

@@ -84,6 +84,8 @@ namespace CRMApp.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("RegionId");
+
                     b.ToTable("Customer");
                 });
 
@@ -136,7 +138,7 @@ namespace CRMApp.Infrastructure.Migrations
                     b.Property<int>("RegionId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReportsTo")
+                    b.Property<int?>("ReportsTo")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -148,6 +150,8 @@ namespace CRMApp.Infrastructure.Migrations
                         .HasColumnType("varchar(30)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("RegionId");
 
                     b.ToTable("Employee");
                 });
@@ -190,6 +194,10 @@ namespace CRMApp.Infrastructure.Migrations
                         .HasColumnType("smallint");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("SupplierId");
 
                     b.ToTable("Product");
                 });
@@ -277,7 +285,61 @@ namespace CRMApp.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("RegionId");
+
                     b.ToTable("Supplier");
+                });
+
+            modelBuilder.Entity("CRMApp.Core.Entity.Customer", b =>
+                {
+                    b.HasOne("CRMApp.Core.Entity.Region", "Region")
+                        .WithMany()
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Region");
+                });
+
+            modelBuilder.Entity("CRMApp.Core.Entity.Employee", b =>
+                {
+                    b.HasOne("CRMApp.Core.Entity.Region", "Region")
+                        .WithMany()
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Region");
+                });
+
+            modelBuilder.Entity("CRMApp.Core.Entity.Product", b =>
+                {
+                    b.HasOne("CRMApp.Core.Entity.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CRMApp.Core.Entity.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("CRMApp.Core.Entity.Supplier", b =>
+                {
+                    b.HasOne("CRMApp.Core.Entity.Region", "Region")
+                        .WithMany()
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Region");
                 });
 #pragma warning restore 612, 618
         }

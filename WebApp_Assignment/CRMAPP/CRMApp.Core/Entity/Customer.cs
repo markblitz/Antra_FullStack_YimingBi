@@ -35,5 +35,7 @@ namespace CRMApp.Core.Entity
 
         [Column(TypeName = "varchar(24)")]
         public string Phone { get; set; }
+
+        public Region Region { get; set; }
     }
 }

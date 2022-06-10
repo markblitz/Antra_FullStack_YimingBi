@@ -36,6 +36,10 @@ namespace CRMApp.Core.Entity
         public int ReorderLevel { get; set; }
 
         [Required(ErrorMessage = "If discontinued is required!")]
-        public bool Discontinued { get; set; } 
+        public bool Discontinued { get; set; }
+
+        public Category Category { get; set; }
+
+        public Supplier Supplier { get; set; }
     }
 }
