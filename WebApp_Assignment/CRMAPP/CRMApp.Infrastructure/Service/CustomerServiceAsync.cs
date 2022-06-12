@@ -1,4 +1,5 @@
-﻿using CRMApp.Core.Contract.Service;
+﻿using CRMApp.Core.Contract.Repository;
+using CRMApp.Core.Contract.Service;
 using CRMApp.Core.Entity;
 using CRMApp.Core.Model.RequestModel;
 using CRMApp.Core.Model.ResponseModel;
@@ -13,8 +14,8 @@ namespace CRMApp.Infrastructure.Service
 {
     public class CustomerServiceAsync : ICustomerServiceAsync
     {
-        private readonly CustomerRepositoryAsync customerRepositoryAsync;
-        public CustomerServiceAsync(CustomerRepositoryAsync customerRepository)
+        private readonly ICustomerRepositoryAsync customerRepositoryAsync;
+        public CustomerServiceAsync(ICustomerRepositoryAsync customerRepository)
         {
             customerRepositoryAsync = customerRepository;
         }
@@ -31,6 +32,11 @@ namespace CRMApp.Infrastructure.Service
             customer.RegionId = newCustomer.RegionId;
             customer.Title = newCustomer.Title;
             return await customerRepositoryAsync.InsertAsync(customer);
+        }
+
+        public async Task<int> DeleteCustomerAsync(int id)
+        {
+            return await customerRepositoryAsync.DeleteAsync(id);
         }
 
         public async Task<IEnumerable<CustomerResponseModel>> GetAllAsync()
@@ -56,6 +62,41 @@ namespace CRMApp.Infrastructure.Service
                 return result;
             }
             return null;
+        }
+
+        public async Task<CustomerRequestModel> GetByIdAsync(int id)
+        {
+            var item = await customerRepositoryAsync.GetByIdAsync(id);
+            if (item != null)
+            {
+                CustomerRequestModel customerRequest = new CustomerRequestModel();
+                customerRequest.Address = item.Address;
+                customerRequest.City = item.City;
+                customerRequest.Country = item.Country;
+                customerRequest.Id = item.Id;
+                customerRequest.Name = item.Name;
+                customerRequest.Phone = item.Phone;
+                customerRequest.PostalCode = item.PostalCode;
+                customerRequest.RegionId = item.RegionId;
+                customerRequest.Title = item.Title;
+                return customerRequest;
+            }
+            return null;
+        }
+
+        public async Task<int> UpdateCustomerAsync(CustomerRequestModel newCustomer)
+        {
+            Customer customer = new Customer();
+            customer.Address = newCustomer.Address;
+            customer.City = newCustomer.City;
+            customer.Country = newCustomer.Country;
+            customer.Id = newCustomer.Id;
+            customer.Name = newCustomer.Name;
+            customer.Phone = newCustomer.Phone;
+            customer.PostalCode = newCustomer.PostalCode;
+            customer.RegionId = newCustomer.RegionId;
+            customer.Title = newCustomer.Title;
+            return await customerRepositoryAsync.UpdateAsync(customer);
         }
     }
 }

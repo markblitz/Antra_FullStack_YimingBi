@@ -1,0 +1,130 @@
+﻿@model EmployeeRequestModel
+
+@if (ViewBag.IsEdit)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Employee edit successfully!</strong> Go to <a asp-action="Table" asp-controller="Employee" >table view</a> or <a asp-action="Card" asp-controller="Employee" >card view</a>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<h1 class="display-6">Edit employee</h1>
+<hr />
+
+<div>Please enter information below:</div><br />
+<form asp-controller="Employee" asp-action="Edit" method="post">
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="FirstName">First Name</label>
+                <input asp-for="FirstName" class="form-control"/>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="LastName">Last Name</label>
+                <input asp-for="LastName" class="form-control"/>
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control"/>
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="TitleOfCourtesy">Title of Courtesy</label>
+                <input asp-for="TitleOfCourtesy" class="form-control"/>
+                <span asp-validation-for="TitleOfCourtesy" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-4">
+                <label asp-for="Phone">Phone Number</label>
+                <input asp-for="Phone" class="form-control"/>
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-4">
+                <label asp-for="BirthDate">Birth Date</label>
+                <input asp-for="BirthDate" class="form-control"/>
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-4">
+                <label asp-for="HireDate">Hire Date</label>
+                <input asp-for="HireDate" class="form-control"/>
+                <span asp-validation-for="HireDate" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="mb-4">
+                <label asp-for="Address"></label>
+                <input asp-for="Address" class="form-control"/>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-4">
+                <label asp-for="City"></label>
+                <input asp-for="City" class="form-control"/>
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-4">
+                <label asp-for="Country"></label>
+                <input asp-for="Country" class="form-control"/>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-4">
+                <label asp-for="PostalCode">Postal Code</label>
+                <input asp-for="PostalCode" class="form-control"/>
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <div class="mb-4">
+                <label asp-for="RegionId">Region Id</label>
+                <select asp-for="RegionId" class="form-control" asp-items="ViewBag.Regions">
+                    <option value="">Select a region:</option>
+                </select>
+                <span asp-validation-for="RegionId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-4">
+                <label asp-for="ReportsTo">Reports To</label>
+                <input asp-for="ReportsTo" class="form-control"/>
+                <span asp-validation-for="ReportsTo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="mb-4">
+                <label asp-for="PhotoPath">Photo Path</label>
+                <input asp-for="PhotoPath" class="form-control"/>
+                <span asp-validation-for="PhotoPath" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="submit" value="Update Employee" class="btn btn-primary"/>
+        </div>
+    </div>
+</form>
+

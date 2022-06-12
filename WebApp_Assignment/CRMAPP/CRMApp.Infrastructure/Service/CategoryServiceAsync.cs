@@ -26,6 +26,11 @@ namespace CRMApp.Infrastructure.Service
             return await categoryReposotoryAsync.InsertAsync(category);
         }
 
+        public async Task<int> DeleteCategoryAsync(int id)
+        {
+            return await categoryReposotoryAsync.DeleteAsync(id);
+        }
+
         public async Task<IEnumerable<CategoryModel>> GetAllAsync()
         {
             var collection = await categoryReposotoryAsync.GetAllAsync();
@@ -43,6 +48,29 @@ namespace CRMApp.Infrastructure.Service
                 return (result);
             }
             return null;
+        }
+
+        public async Task<CategoryModel> GetByIdAsync(int id)
+        {
+            var item = await categoryReposotoryAsync.GetByIdAsync(id);
+            if (item != null)
+            {
+                CategoryModel category = new CategoryModel();
+                category.Description = item.Description;
+                category.Id = item.Id;
+                category.Name = item.Name;
+                return category;
+            }
+            return null;
+        }
+
+        public async Task<int> UpdateCategoryAsync(CategoryModel newCategory)
+        {
+            Category category = new Category();
+            category.Description = newCategory.Description;
+            category.Id = newCategory.Id;
+            category.Name = newCategory.Name;
+            return await categoryReposotoryAsync.UpdateAsync(category);
         }
     }
 }

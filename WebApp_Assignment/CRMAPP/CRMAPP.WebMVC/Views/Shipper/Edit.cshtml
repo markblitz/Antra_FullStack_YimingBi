@@ -1,0 +1,36 @@
+﻿@model ShipperModel
+
+@if (ViewBag.IsEdit)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Shipper edit successfully!</strong> Go to <a asp-action="Index" asp-controller="Shipper" >shipper table</a>
+    </div>
+}
+
+<h1 class="display-6">Edit shipper</h1>
+<hr />
+
+<div>Please enter information below:</div><br />
+<form asp-controller="Shipper" asp-action="Edit" method="post">
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="Phone"></label>
+                <input asp-for="Phone" class="form-control"/>
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="submit" value="Update Shipper" class="btn btn-primary"/>
+        </div>
+    </div>
+</form>

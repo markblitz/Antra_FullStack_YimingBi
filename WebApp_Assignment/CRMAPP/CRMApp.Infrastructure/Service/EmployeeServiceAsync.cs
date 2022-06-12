@@ -39,6 +39,11 @@ namespace CRMApp.Infrastructure.Service
             return await employeeRepositoryAsync.InsertAsync(employee);
         }
 
+        public async Task<int> DeleteEmployeeAsync(int id)
+        {
+            return await employeeRepositoryAsync.DeleteAsync(id);
+        }
+
         public async Task<IEnumerable<EmployeeResponseModel>> GetAllAsync()
         {
             var collection = await employeeRepositoryAsync.GetAllAsync();
@@ -62,6 +67,53 @@ namespace CRMApp.Infrastructure.Service
                 return result;
             }
             return null;
+        }
+
+        public async Task<EmployeeRequestModel> GetByIdAsync(int id)
+        {
+            var item = await employeeRepositoryAsync.GetByIdAsync(id);
+            if (item != null)
+            {
+                EmployeeRequestModel employeeRequest = new EmployeeRequestModel();
+                employeeRequest.Address = item.Address;
+                employeeRequest.BirthDate = item.BirthDate;
+                employeeRequest.City = item.City;
+                employeeRequest.Country = item.Country;
+                employeeRequest.FirstName = item.FirstName;
+                employeeRequest.HireDate = item.HireDate;
+                employeeRequest.Id = item.Id;
+                employeeRequest.LastName = item.LastName;
+                employeeRequest.Phone = item.Phone;
+                employeeRequest.PhotoPath = item.PhotoPath;
+                employeeRequest.PostalCode = item.PostalCode;
+                employeeRequest.RegionId = item.RegionId;
+                employeeRequest.ReportsTo = item.ReportsTo;
+                employeeRequest.Title = item.Title;
+                employeeRequest.TitleOfCourtesy = item.TitleOfCourtesy;
+                return employeeRequest;
+            }
+            return null;
+        }
+
+        public async Task<int> UpdateEmployeeAsync(EmployeeRequestModel newEmployee)
+        {
+            Employee employee = new Employee();
+            employee.Address = newEmployee.Address;
+            employee.BirthDate = newEmployee.BirthDate;
+            employee.City = newEmployee.City;
+            employee.Country = newEmployee.Country;
+            employee.FirstName = newEmployee.FirstName;
+            employee.HireDate = newEmployee.HireDate;
+            employee.Id = newEmployee.Id;
+            employee.LastName = newEmployee.LastName;
+            employee.Phone = newEmployee.Phone;
+            employee.PhotoPath = newEmployee.PhotoPath;
+            employee.PostalCode = newEmployee.PostalCode;
+            employee.RegionId = newEmployee.RegionId;
+            employee.ReportsTo = newEmployee.ReportsTo;
+            employee.Title = newEmployee.Title;
+            employee.TitleOfCourtesy = newEmployee.TitleOfCourtesy;
+            return await employeeRepositoryAsync.UpdateAsync(employee);
         }
     }
 }

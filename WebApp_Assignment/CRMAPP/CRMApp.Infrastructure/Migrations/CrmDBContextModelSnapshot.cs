@@ -31,7 +31,6 @@ namespace CRMApp.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("ntext");
 
                     b.Property<string>("Name")
@@ -52,15 +51,12 @@ namespace CRMApp.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("varchar(60)");
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasColumnType("varchar(20)");
 
                     b.Property<string>("Country")
-                        .IsRequired()
                         .HasColumnType("varchar(20)");
 
                     b.Property<string>("Name")
@@ -68,18 +64,15 @@ namespace CRMApp.Infrastructure.Migrations
                         .HasColumnType("varchar(30)");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("varchar(24)");
 
                     b.Property<string>("PostalCode")
-                        .IsRequired()
                         .HasColumnType("varchar(10)");
 
                     b.Property<int>("RegionId")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("varchar(30)");
 
                     b.HasKey("Id");
@@ -98,25 +91,22 @@ namespace CRMApp.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("varchar(60)");
 
-                    b.Property<DateTime>("BirthDate")
+                    b.Property<DateTime?>("BirthDate")
                         .HasColumnType("datetime");
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasColumnType("varchar(20)");
 
                     b.Property<string>("Country")
-                        .IsRequired()
                         .HasColumnType("varchar(20)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("varchar(30)");
 
-                    b.Property<DateTime>("HireDate")
+                    b.Property<DateTime?>("HireDate")
                         .HasColumnType("datetime");
 
                     b.Property<string>("LastName")
@@ -124,15 +114,12 @@ namespace CRMApp.Infrastructure.Migrations
                         .HasColumnType("varchar(30)");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("varchar(24)");
 
                     b.Property<string>("PhotoPath")
-                        .IsRequired()
                         .HasColumnType("ntext");
 
                     b.Property<string>("PostalCode")
-                        .IsRequired()
                         .HasColumnType("varchar(10)");
 
                     b.Property<int>("RegionId")
@@ -142,11 +129,9 @@ namespace CRMApp.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("varchar(30)");
 
                     b.Property<string>("TitleOfCourtesy")
-                        .IsRequired()
                         .HasColumnType("varchar(30)");
 
                     b.HasKey("Id");
@@ -175,22 +160,21 @@ namespace CRMApp.Infrastructure.Migrations
                         .HasColumnType("varchar(40)");
 
                     b.Property<string>("QuantityPerUnit")
-                        .IsRequired()
                         .HasColumnType("varchar(25)");
 
-                    b.Property<short>("ReorderLevel")
+                    b.Property<short?>("ReorderLevel")
                         .HasColumnType("smallint");
 
                     b.Property<int>("SupplierId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("UnitPrice")
+                    b.Property<decimal?>("UnitPrice")
                         .HasColumnType("money");
 
-                    b.Property<short>("UnitsInStock")
+                    b.Property<short?>("UnitsInStock")
                         .HasColumnType("smallint");
 
-                    b.Property<short>("UnitsOnOrder")
+                    b.Property<short?>("UnitsOnOrder")
                         .HasColumnType("smallint");
 
                     b.HasKey("Id");
@@ -232,7 +216,6 @@ namespace CRMApp.Infrastructure.Migrations
                         .HasColumnType("varchar(40)");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("varchar(24)");
 
                     b.HasKey("Id");
@@ -249,11 +232,9 @@ namespace CRMApp.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("varchar(60)");
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasColumnType("varchar(20)");
 
                     b.Property<string>("CompanyName")
@@ -261,23 +242,18 @@ namespace CRMApp.Infrastructure.Migrations
                         .HasColumnType("varchar(40)");
 
                     b.Property<string>("ContactName")
-                        .IsRequired()
                         .HasColumnType("varchar(30)");
 
                     b.Property<string>("ContactTitle")
-                        .IsRequired()
                         .HasColumnType("varchar(30)");
 
                     b.Property<string>("Country")
-                        .IsRequired()
                         .HasColumnType("varchar(20)");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("varchar(24)");
 
                     b.Property<string>("PostalCode")
-                        .IsRequired()
                         .HasColumnType("varchar(10)");
 
                     b.Property<int>("RegionId")

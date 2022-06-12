@@ -1,0 +1,96 @@
+﻿@model ProductRequestModel
+
+@if (ViewBag.IsEdit)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Product edit successfully!</strong> Go to <a asp-action="Index" asp-controller="Product" >product table</a>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<h1 class="display-6">Edit product</h1>
+<hr />
+
+<div>Please enter information below:</div><br />
+<form asp-controller="Product" asp-action="Edit" method="post">
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="UnitPrice">Unit Price</label>
+                <input asp-for="UnitPrice" class="form-control"/>
+                <span asp-validation-for="UnitPrice" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="mb-4">
+                <label asp-for="QuantityPerUnit">Quantity per Unit</label>
+                <input asp-for="QuantityPerUnit" class="form-control"/>
+                <span asp-validation-for="QuantityPerUnit" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="CategoryId">Category</label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categories">
+                    <option value="">Select a category:</option>
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="SupplierId">Supplier</label>
+                <select asp-for="SupplierId" class="form-control" asp-items="ViewBag.Suppliers">
+                    <option value="">Select a supplier:</option>
+                </select>
+                <span asp-validation-for="SupplierId" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="UnitsInStock">Units in Stock</label>
+                <input asp-for="UnitsInStock" class="form-control"/>
+                <span asp-validation-for="UnitsInStock" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="UnitsOnOrder">Units on Order</label>
+                <input asp-for="UnitsOnOrder" class="form-control"/>
+                <span asp-validation-for="UnitsOnOrder" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="ReorderLevel">Reorder Level</label>
+                <input asp-for="ReorderLevel" class="form-control"/>
+                <span asp-validation-for="ReorderLevel" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-4 form-check"><br />
+                <label asp-for="Discontinued">Discontinued</label>
+                <input type="checkbox" asp-for="Discontinued" class="form-check-input"/>
+                <span asp-validation-for="Discontinued" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="submit" value="Update Product" class="btn btn-primary"/>
+        </div>
+    </div>
+</form>
+
+

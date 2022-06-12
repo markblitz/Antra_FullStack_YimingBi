@@ -17,24 +17,24 @@ namespace CRMApp.Core.Entity
         public string Name { get; set; }
 
         [Column(TypeName = "varchar(30)")]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         [Column(TypeName = "varchar(60)")]
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         [Column(TypeName = "varchar(20)")]
-        public string City { get; set; }
+        public string? City { get; set; }
 
         public int RegionId { get; set; }
 
         [Column(TypeName = "varchar(10)")]
-        public string PostalCode { get; set; }
+        public string? PostalCode { get; set; }
 
         [Column(TypeName = "varchar(20)")]
-        public string Country { get; set; }
+        public string? Country { get; set; }
 
         [Column(TypeName = "varchar(24)")]
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
 
         public Region Region { get; set; }
     }

@@ -17,26 +17,26 @@ namespace CRMApp.Core.Model.RequestModel
         public string CompanyName { get; set; }
 
         [Column(TypeName = "varchar(30)")]
-        public string ContactName { get; set; }
+        public string? ContactName { get; set; }
 
         [Column(TypeName = "varchar(30)")]
-        public string ContactTitle { get; set; }
+        public string? ContactTitle { get; set; }
 
         [Column(TypeName = "varchar(60)")]
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         [Column(TypeName = "varchar(20)")]
-        public string City { get; set; }
+        public string? City { get; set; }
 
         public int RegionId { get; set; }
 
         [Column(TypeName = "varchar(10)")]
-        public string PostalCode { get; set; }
+        public string? PostalCode { get; set; }
 
         [Column(TypeName = "varchar(20)")]
-        public string Country { get; set; }
+        public string? Country { get; set; }
 
         [Column(TypeName = "varchar(24)")]
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
     }
 }

@@ -11,5 +11,8 @@ namespace CRMApp.Core.Contract.Service
     {
         Task<IEnumerable<ShipperModel>> GetAllAsync();
         Task<int> AddShipperAsync(ShipperModel newShipper);
+        Task<ShipperModel> GetByIdAsync(int id);
+        Task<int> UpdateShipperAsync(ShipperModel newShipper);
+        Task<int> DeleteShipperAsync(int id);
     }
 }

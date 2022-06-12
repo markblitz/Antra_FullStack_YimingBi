@@ -12,7 +12,8 @@
                     <div class="card-body">
                         <h5 class="card-title">@employee.TitleOfCourtesy @employee.FirstName @employee.LastName</h5>
                         <p class="card-text">Join on: @employee.HireDate<br> From: @employee.City<br> Contact at: @employee.Phone</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a asp-action="Edit" asp-controller="Employee" asp-route-id="@employee.Id" class="btn btn-primary">Edit</a>
+                        <a asp-action="Delete" asp-controller="Employee" asp-route-id="@employee.Id" class="btn btn-danger">Delete</a>
                     </div>
                 </div>
             </div>
@@ -21,6 +22,7 @@
     <div class="row">
         <div class="col">
             <a asp-action="Create" asp-controller="Employee" class="btn btn-primary">Create new employee</a>
+            <a asp-action="Table" asp-controller="Employee" class="btn btn-primary">View employees in table</a>
         </div>
     </div>
 </div>

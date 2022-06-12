@@ -13,6 +13,7 @@
             <th>Hire Date</th>
             <th>City</th>
             <th>Phone</th>
+            <th>Option</th>
         </tr>
     </thead>
     <tbody>
@@ -27,8 +28,13 @@
                 <td>@employee.HireDate</td>
                 <td>@employee.City</td>
                 <td>@employee.Phone</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Employee" asp-route-id="@employee.Id">Edit</a>
+                    <a asp-action="Delete" asp-controller="Employee" asp-route-id="@employee.Id">Delete</a>
+                </td>
             </tr>
         }
     </tbody>
 </table>
 <a asp-action="Create" asp-controller="Employee" class="btn btn-primary">Create new employee</a>
+<a asp-action="Card" asp-controller="Employee" class="btn btn-primary">View employees in card</a>

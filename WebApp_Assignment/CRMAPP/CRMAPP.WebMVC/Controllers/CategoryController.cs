@@ -39,5 +39,32 @@ namespace CRMApp.WebMVC.Controllers
             }
             return View(model);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            ViewBag.IsEdit = false;
+            var editCategory = await categoryServiceAsync.GetByIdAsync(id);
+            return View(editCategory);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(CategoryModel model)
+        {
+            ViewBag.IsEdit = false;
+            if (ModelState.IsValid)
+            {
+                await categoryServiceAsync.UpdateCategoryAsync(model);
+                ViewBag.IsEdit = true;
+            }
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await categoryServiceAsync.DeleteCategoryAsync(id);
+            return RedirectToAction("Index");
+        }
     }
 }

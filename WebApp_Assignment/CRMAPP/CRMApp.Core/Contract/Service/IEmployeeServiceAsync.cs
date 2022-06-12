@@ -12,5 +12,8 @@ namespace CRMApp.Core.Contract.Service
     {
         Task<IEnumerable<EmployeeResponseModel>> GetAllAsync();
         Task<int> AddEmployeeAsync(EmployeeRequestModel newEmployee);
+        Task<EmployeeRequestModel> GetByIdAsync(int id);
+        Task<int> UpdateEmployeeAsync(EmployeeRequestModel newEmployee);
+        Task<int> DeleteEmployeeAsync(int id);
     }
 }

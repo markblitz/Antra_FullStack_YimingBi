@@ -11,5 +11,8 @@ namespace CRMApp.Core.Contract.Service
     {
         Task<IEnumerable<RegionModel>> GetAllAsync();
         Task<int> AddRegionAsync(RegionModel newRegion);
+        Task<RegionModel> GetByIdAsync(int id);
+        Task<int> UpdateRegionAsync(RegionModel newRegion);
+        Task<int> DeleteRegionAsync(int id);
     }
 }

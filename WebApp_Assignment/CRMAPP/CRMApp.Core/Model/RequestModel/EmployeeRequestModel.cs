@@ -21,37 +21,37 @@ namespace CRMApp.Core.Model.RequestModel
         public string LastName { get; set; }
 
         [Column(TypeName = "varchar(30)")]
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         [Column(TypeName = "varchar(30)")]
-        public string TitleOfCourtesy { get; set; }
+        public string? TitleOfCourtesy { get; set; }
 
         [Column(TypeName = "datetime")]
-        public DateTime BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
 
         [Column(TypeName = "datetime")]
-        public DateTime HireDate { get; set; }
+        public DateTime? HireDate { get; set; }
 
         [Column(TypeName = "varchar(60)")]
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         [Column(TypeName = "varchar(20)")]
-        public string City { get; set; }
+        public string? City { get; set; }
 
         public int RegionId { get; set; }
 
         [Column(TypeName = "varchar(10)")]
-        public string PostalCode { get; set; }
+        public string? PostalCode { get; set; }
 
         [Column(TypeName = "varchar(20)")]
-        public string Country { get; set; }
+        public string? Country { get; set; }
 
         [Column(TypeName = "varchar(24)")]
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
 
-        public int ReportsTo { get; set; }
+        public int? ReportsTo { get; set; }
 
         [Column(TypeName = "ntext")]
-        public string PhotoPath { get; set; }
+        public string? PhotoPath { get; set; }
     }
 }

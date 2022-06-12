@@ -20,12 +20,12 @@ builder.Services.AddScoped<ISupplierRepositoryAsync, SupplierRepositoryAsync>();
 
 // Service dependence injection
 builder.Services.AddScoped<ICategoryServiceAsync, CategoryServiceAsync>();
-//builder.Services.AddScoped<ICustomerServiceAsync, CustomerServiceAsync>();
+builder.Services.AddScoped<ICustomerServiceAsync, CustomerServiceAsync>();
 builder.Services.AddScoped<IEmployeeServiceAsync, EmployeeServiceAsync>();
-//builder.Services.AddScoped<IProductServiceAsync, ProductServiceAsync>();
+builder.Services.AddScoped<IProductServiceAsync, ProductServiceAsync>();
 builder.Services.AddScoped<IRegionServiceAsync, RegionServiceAsync>();
-//builder.Services.AddScoped<IShipperServiceAsync, ShipperServiceAsync>();
-//builder.Services.AddScoped<ISupplierServiceAsync, SupplierServiceAsync>();
+builder.Services.AddScoped<IShipperServiceAsync, ShipperServiceAsync>();
+builder.Services.AddScoped<ISupplierServiceAsync, SupplierServiceAsync>();
 
 var app = builder.Build();
 

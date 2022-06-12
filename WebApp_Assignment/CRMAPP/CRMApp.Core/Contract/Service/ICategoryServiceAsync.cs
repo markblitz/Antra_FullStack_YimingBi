@@ -11,5 +11,8 @@ namespace CRMApp.Core.Contract.Service
     {
         Task<IEnumerable<CategoryModel>> GetAllAsync();
         Task<int> AddCategoryAsync(CategoryModel newCategpry);
+        Task<CategoryModel> GetByIdAsync(int id);
+        Task<int> UpdateCategoryAsync(CategoryModel newCategory);
+        Task<int> DeleteCategoryAsync(int id);
     }
 }

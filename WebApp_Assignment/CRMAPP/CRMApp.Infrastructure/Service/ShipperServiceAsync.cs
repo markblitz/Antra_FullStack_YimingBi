@@ -21,10 +21,14 @@ namespace CRMApp.Infrastructure.Service
         public async Task<int> AddShipperAsync(ShipperModel newShipper)
         {
             Shipper shipper = new Shipper();
-            shipper.Id = newShipper.Id;
             shipper.Name = newShipper.Name;
             shipper.Phone = newShipper.Phone;
             return await shipperRepositoryAsync.InsertAsync(shipper);
+        }
+
+        public async Task<int> DeleteShipperAsync(int id)
+        {
+            return await shipperRepositoryAsync.DeleteAsync(id);
         }
 
         public async Task<IEnumerable<ShipperModel>> GetAllAsync()
@@ -44,6 +48,29 @@ namespace CRMApp.Infrastructure.Service
                 return result;
             }
             return null;
+        }
+
+        public async Task<ShipperModel> GetByIdAsync(int id)
+        {
+            var item = await shipperRepositoryAsync.GetByIdAsync(id);
+            if (item != null)
+            {
+                ShipperModel shipper = new ShipperModel();
+                shipper.Id = item.Id;
+                shipper.Name = item.Name;
+                shipper.Phone = item.Phone;
+                return shipper;
+            }
+            return null;
+        }
+
+        public async Task<int> UpdateShipperAsync(ShipperModel newShipper)
+        {
+            Shipper shipper = new Shipper();
+            shipper.Id = newShipper.Id;
+            shipper.Name = newShipper.Name;
+            shipper.Phone = newShipper.Phone;
+            return await shipperRepositoryAsync.UpdateAsync(shipper);
         }
     }
 }

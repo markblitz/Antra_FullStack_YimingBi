@@ -2,15 +2,19 @@
 using CRMApp.Core.Model.RequestModel;
 using CRMApp.Core.Model.ResponseModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CRMApp.WebMVC.Controllers
 {
     public class EmployeeController : Controller
     {
         private readonly IEmployeeServiceAsync employeeServiceAsync;
-        public EmployeeController(IEmployeeServiceAsync employeeService)
+        private readonly IRegionServiceAsync regionServiceAsync;
+        public EmployeeController(IEmployeeServiceAsync employeeService
+            , IRegionServiceAsync regionService)
         {
             employeeServiceAsync = employeeService;
+            regionServiceAsync = regionService;
         }
 
         public async Task<IActionResult> Table()
@@ -38,6 +42,8 @@ namespace CRMApp.WebMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
+            var regionCollection = await regionServiceAsync.GetAllAsync();
+            ViewBag.Regions = new SelectList(regionCollection, "Id", "Name");
             return View();
         }
 
@@ -49,7 +55,40 @@ namespace CRMApp.WebMVC.Controllers
                 await employeeServiceAsync.AddEmployeeAsync(model);
                 return Redirect("Table");
             }
+            var regionCollection = await regionServiceAsync.GetAllAsync();
+            ViewBag.Regions = new SelectList(regionCollection, "Id", "Name");
             return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            ViewBag.IsEdit = false;
+            var editEmployee = await employeeServiceAsync.GetByIdAsync(id);
+            var regionCollection = await regionServiceAsync.GetAllAsync();
+            ViewBag.Regions = new SelectList(regionCollection, "Id", "Name");
+            return View(editEmployee);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(EmployeeRequestModel model)
+        {
+            ViewBag.IsEdit = false;
+            if (ModelState.IsValid)
+            {
+                await employeeServiceAsync.UpdateEmployeeAsync(model);
+                ViewBag.IsEdit = true;
+            }
+            var regionCollection = await regionServiceAsync.GetAllAsync();
+            ViewBag.Regions = new SelectList(regionCollection, "Id", "Name");
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await employeeServiceAsync.DeleteEmployeeAsync(id);
+            return RedirectToAction("Table");
         }
     }
 }

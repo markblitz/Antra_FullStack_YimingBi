@@ -1,0 +1,28 @@
+﻿@model ShipperModel
+<h1 class="display-6">Create new shipper</h1>
+<hr />
+
+<div>Please enter information below:</div><br />
+<form asp-controller="Shipper" asp-action="Create" method="post">
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="Phone"></label>
+                <input asp-for="Phone" class="form-control"/>
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="submit" value="Create Shipper" class="btn btn-primary"/>
+        </div>
+    </div>
+</form>

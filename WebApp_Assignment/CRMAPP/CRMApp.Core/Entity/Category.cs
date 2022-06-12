@@ -17,6 +17,6 @@ namespace CRMApp.Core.Entity
         public string Name { get; set; }
 
         [Column(TypeName = "ntext")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
     }
 }

@@ -24,6 +24,11 @@ namespace CRMApp.Infrastructure.Service
             return await regionRepositoryAsync.InsertAsync(region);
         }
 
+        public async Task<int> DeleteRegionAsync(int id)
+        {
+            return await regionRepositoryAsync.DeleteAsync(id);
+        }
+
         public async Task<IEnumerable<RegionModel>> GetAllAsync()
         {
             var collection = await regionRepositoryAsync.GetAllAsync();
@@ -40,6 +45,27 @@ namespace CRMApp.Infrastructure.Service
                 return result;
             }
             return null;
+        }
+
+        public async Task<RegionModel> GetByIdAsync(int id)
+        {
+            var item = await regionRepositoryAsync.GetByIdAsync(id);
+            if (item != null)
+            {
+                RegionModel region = new RegionModel();
+                region.Id = item.Id;
+                region.Name = item.Name;
+                return region;
+            }
+            return null;
+        }
+
+        public async Task<int> UpdateRegionAsync(RegionModel newRegion)
+        {
+            Region region = new Region();
+            region.Id = newRegion.Id;
+            region.Name = newRegion.Name;
+            return await regionRepositoryAsync.UpdateAsync(region);
         }
     }
 }

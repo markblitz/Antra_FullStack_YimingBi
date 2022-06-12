@@ -12,5 +12,8 @@ namespace CRMApp.Core.Contract.Service
     {
         Task<IEnumerable<ProductResponseModel>> GetAllAsync();
         Task<int> AddProductAsync(ProductRequestModel newProduct);
+        Task<ProductRequestModel> GetByIdAsync(int id);
+        Task<int> UpdateProductAsync(ProductRequestModel newProduct);
+        Task<int> DeleteProductAsync(int id);
     }
 }

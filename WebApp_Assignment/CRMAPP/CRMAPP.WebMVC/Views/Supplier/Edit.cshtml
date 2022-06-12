@@ -1,0 +1,94 @@
+﻿@model SupplierRequestModel
+
+@if (ViewBag.IsEdit)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Supplier edit successfully!</strong> Go to <a asp-action="Index" asp-controller="Supplier" >supplier table</a>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<h1 class="display-6">Edit supplier</h1>
+<hr />
+
+<div>Please enter information below:</div><br />
+<form asp-controller="Supplier" asp-action="Edit" method="post">
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="CompanyName">Company Name</label>
+                <input asp-for="CompanyName" class="form-control"/>
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="ContactName">Contact Name</label>
+                <input asp-for="ContactName" class="form-control"/>
+                <span asp-validation-for="ContactName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="ContactTitle">Contact Title</label>
+                <input asp-for="ContactTitle" class="form-control"/>
+                <span asp-validation-for="ContactTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="Phone">Phone Number</label>
+                <input asp-for="Phone" class="form-control"/>
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="mb-4">
+                <label asp-for="Address"></label>
+                <input asp-for="Address" class="form-control"/>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-4">
+                <label asp-for="City"></label>
+                <input asp-for="City" class="form-control"/>
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-4">
+                <label asp-for="Country"></label>
+                <input asp-for="Country" class="form-control"/>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="mb-4">
+                <label asp-for="PostalCode">Postal Code</label>
+                <input asp-for="PostalCode" class="form-control"/>
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <div class="mb-4">
+                <label asp-for="RegionId">Region</label>
+                <select asp-for="RegionId" class="form-control" asp-items="ViewBag.Regions">
+                    <option value="">Select a region:</option>
+                </select>
+                <span asp-validation-for="RegionId" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="submit" value="Update Supplier" class="btn btn-primary"/>
+        </div>
+    </div>
+</form>
+
+

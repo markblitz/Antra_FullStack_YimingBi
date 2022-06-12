@@ -24,7 +24,6 @@ namespace CRMApp.Infrastructure.Service
             Product product = new Product();
             product.CategoryId = newProduct.CategoryId;
             product.Discontinued = newProduct.Discontinued;
-            product.Id = newProduct.Id;
             product.Name = newProduct.Name;
             product.QuantityPerUnit = newProduct.QuantityPerUnit;
             product.ReorderLevel = newProduct.ReorderLevel;
@@ -33,6 +32,11 @@ namespace CRMApp.Infrastructure.Service
             product.UnitsInStock = newProduct.UnitsInStock;
             product.UnitsOnOrder = newProduct.UnitsOnOrder;
             return await productRepositoryAsync.InsertAsync(product);
+        }
+
+        public async Task<int> DeleteProductAsync(int id)
+        {
+            return await productRepositoryAsync.DeleteAsync(id);
         }
 
         public async Task<IEnumerable<ProductResponseModel>> GetAllAsync()
@@ -56,6 +60,43 @@ namespace CRMApp.Infrastructure.Service
                 return result;
             }
             return null;
+        }
+
+        public async Task<ProductRequestModel> GetByIdAsync(int id)
+        {
+            var item = await productRepositoryAsync.GetByIdAsync(id);
+            if (item != null)
+            {
+                ProductRequestModel productRequest = new ProductRequestModel();
+                productRequest.CategoryId = item.CategoryId;
+                productRequest.Discontinued = item.Discontinued;
+                productRequest.Id = item.Id;
+                productRequest.Name = item.Name;
+                productRequest.QuantityPerUnit = item.QuantityPerUnit;
+                productRequest.ReorderLevel = item.ReorderLevel;
+                productRequest.SupplierId = item.SupplierId;
+                productRequest.UnitPrice = item.UnitPrice;
+                productRequest.UnitsInStock = item.UnitsInStock;
+                productRequest.UnitsOnOrder = item.UnitsOnOrder;
+                return productRequest;
+            }
+            return null;
+        }
+
+        public async Task<int> UpdateProductAsync(ProductRequestModel newProduct)
+        {
+            Product product = new Product();
+            product.CategoryId = newProduct.CategoryId;
+            product.Discontinued = newProduct.Discontinued;
+            product.Id = newProduct.Id;
+            product.Name = newProduct.Name;
+            product.QuantityPerUnit = newProduct.QuantityPerUnit;
+            product.ReorderLevel = newProduct.ReorderLevel;
+            product.SupplierId = newProduct.SupplierId;
+            product.UnitPrice = newProduct.UnitPrice;
+            product.UnitsInStock = newProduct.UnitsInStock;
+            product.UnitsOnOrder = newProduct.UnitsOnOrder;
+            return await productRepositoryAsync.UpdateAsync(product);
         }
     }
 }

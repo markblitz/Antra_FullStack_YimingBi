@@ -1,0 +1,39 @@
+﻿@model CategoryModel
+
+@if (ViewBag.IsEdit)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Category edit successfully!</strong> Go to <a asp-action="Index" asp-controller="Category" >category table</a>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<h1 class="display-6">Edit Category</h1>
+<hr />
+
+<div>Please enter information below:</div><br />
+<form asp-controller="Category" asp-action="Edit" method="post">
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-4">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="mb-4">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col">
+            <input type="submit" value="Update Category" class="btn btn-primary"/>
+        </div>
+    </div>
+</form>
+

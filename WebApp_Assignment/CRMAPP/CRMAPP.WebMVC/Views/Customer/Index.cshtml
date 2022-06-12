@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CustomerResponseModel>
+<h1 class="display-6">Customer Table</h1>
+<hr />
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Customer Id</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Phone</th>
+
+            <th>Address</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>PostalCode</th>
+
+            <th>RegionId</th>
+            <th>Option</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.Name</td>
+                <td>@customer.Title</td>
+                <td>@customer.Phone</td>
+
+                <td>@customer.Address</td>
+                <td>@customer.City</td>
+                <td>@customer.Country</td>
+                <td>@customer.PostalCode</td>
+
+                <td>@customer.RegionId</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Customer" asp-route-id="@customer.Id">Edit</a>
+                    <a asp-action="Delete" asp-controller="Customer" asp-route-id="@customer.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create" asp-controller="Customer" class="btn btn-primary">Create new customer</a>

@@ -17,6 +17,6 @@ namespace CRMApp.Core.Model
         public string Name { get; set; }
 
         [Column(TypeName = "varchar(24)")]
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
     }
 }

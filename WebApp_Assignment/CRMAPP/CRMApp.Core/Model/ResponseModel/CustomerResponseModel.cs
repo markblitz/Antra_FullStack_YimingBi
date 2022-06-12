@@ -12,18 +12,18 @@ namespace CRMApp.Core.Model.ResponseModel
 
         public string Name { get; set; }
 
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
-        public string City { get; set; }
+        public string? City { get; set; }
 
         public int RegionId { get; set; }
 
-        public string PostalCode { get; set; }
+        public string? PostalCode { get; set; }
 
-        public string Country { get; set; }
+        public string? Country { get; set; }
 
-        public string Phone { get; set; }
+        public string? Phone { get; set; }
     }
 }
