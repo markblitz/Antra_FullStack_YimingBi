@@ -16,8 +16,10 @@ namespace CRMApp.Core.Entity
         [Column(TypeName = "varchar(40)")]
         public string Name { get; set; }
 
+        [Required(ErrorMessage = "Please select a supplier!")]
         public int SupplierId { get; set; }
 
+        [Required(ErrorMessage = "Please select a category!")]
         public int CategoryId { get; set; }
 
         [Column(TypeName = "varchar(25)")]

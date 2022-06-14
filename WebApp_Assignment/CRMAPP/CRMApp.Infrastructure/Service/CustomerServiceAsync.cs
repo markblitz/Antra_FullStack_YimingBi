@@ -50,7 +50,7 @@ namespace CRMApp.Infrastructure.Service
                 List<CustomerResponseModel> result = new List<CustomerResponseModel>();
                 foreach (var item in collection)
                 {   
-                    var region = await regionRepositoryAsync.GetByIdAsync(item.Id);
+                    var region = await regionRepositoryAsync.GetByIdAsync(item.RegionId);
                     CustomerResponseModel customerResponse = new CustomerResponseModel();
                     customerResponse.Address = item.Address;
                     customerResponse.City = item.City;

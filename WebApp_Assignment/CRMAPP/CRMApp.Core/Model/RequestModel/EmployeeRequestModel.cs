@@ -52,6 +52,6 @@ namespace CRMApp.Core.Model.RequestModel
         public int? ReportsTo { get; set; }
 
         [Column(TypeName = "ntext")]
-        public string? PhotoPath { get; set; }
+        public string PhotoPath { get; set; }
     }
 }

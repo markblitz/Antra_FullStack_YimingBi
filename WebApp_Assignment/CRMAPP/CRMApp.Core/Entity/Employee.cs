@@ -38,6 +38,7 @@ namespace CRMApp.Core.Entity
         [Column(TypeName = "varchar(20)")]
         public string? City { get; set; }
 
+        [Required(ErrorMessage = "Please select a region!")]
         public int RegionId { get; set; }
 
         [Column(TypeName = "varchar(10)")]

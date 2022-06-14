@@ -61,3 +61,13 @@ C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAP
 C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.WebAPI\bin\Debug\net6.0\CRMApp.Infrastructure.dll
 C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.WebAPI\bin\Debug\net6.0\CRMApp.Infrastructure.pdb
 C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.WebAPI\bin\Debug\net6.0\CRMApp.Core.pdb
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.WebAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.WebAPI\bin\Debug\net6.0\Serilog.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.WebAPI\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.WebAPI\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.WebAPI\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.WebAPI\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.WebAPI\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.WebAPI\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.WebAPI\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMApp.WebAPI\bin\Debug\net6.0\Serilog.Sinks.File.dll

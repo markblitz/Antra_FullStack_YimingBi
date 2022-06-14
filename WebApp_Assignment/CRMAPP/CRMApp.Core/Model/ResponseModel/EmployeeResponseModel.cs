@@ -14,16 +14,16 @@ namespace CRMApp.Core.Model.ResponseModel
 
         public string LastName { get; set; }
 
-        public string? Title { get; set; }
+        public string Title { get; set; }
 
-        public string? TitleOfCourtesy { get; set; }
+        public string TitleOfCourtesy { get; set; }
 
         public DateTime? HireDate { get; set; }
 
-        public string? City { get; set; }
+        public string City { get; set; }
 
-        public string? Phone { get; set; }
+        public string Phone { get; set; }
 
-        public string? PhotoPath { get; set; }
+        public string PhotoPath { get; set; }
     }
 }

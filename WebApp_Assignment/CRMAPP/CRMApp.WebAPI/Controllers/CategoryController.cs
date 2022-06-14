@@ -33,6 +33,13 @@ namespace CRMApp.WebAPI.Controllers
             return Ok(category);
         }
 
+        [HttpGet]
+        [Route("{name}")]
+        public async Task<IActionResult> GetByName(string name)
+        {
+            throw new NotImplementedException("Can not get region information by name!");
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddCategory(CategoryModel categoryModel)
         {

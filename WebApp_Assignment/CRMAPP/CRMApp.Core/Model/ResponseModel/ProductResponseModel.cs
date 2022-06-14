@@ -14,7 +14,7 @@ namespace CRMApp.Core.Model.ResponseModel
 
         public int CategoryId { get; set; }
 
-        public string? QuantityPerUnit { get; set; }
+        public string QuantityPerUnit { get; set; }
 
         public decimal? UnitPrice { get; set; }
 

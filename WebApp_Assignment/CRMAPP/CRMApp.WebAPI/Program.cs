@@ -5,9 +5,12 @@ using CRMApp.Infrastructure.Service;
 using CRMApp.Infrastructure.Data;
 using CRMApp.Core.Contract.Repository;
 using CRMApp.Infrastructure.Repository;
+using CRMApp.WebAPI.Middleware;
+using Serilog;
+using Serilog.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Host.UseSerilog();
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -42,6 +45,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseSerilogRequestLogging();
+
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 
 app.UseHttpsRedirection();
 
