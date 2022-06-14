@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "DafQZIXo8jc25ABKOs3K7XW8jAfASIBqjeH2BdpWBWk=",
+  "Source": "CRMApp.WebAPI",
+  "BasePath": "_content/CRMApp.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

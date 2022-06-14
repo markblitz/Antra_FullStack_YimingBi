@@ -15,9 +15,12 @@ namespace CRMApp.Infrastructure.Service
     public class CustomerServiceAsync : ICustomerServiceAsync
     {
         private readonly ICustomerRepositoryAsync customerRepositoryAsync;
-        public CustomerServiceAsync(ICustomerRepositoryAsync customerRepository)
+        private readonly IRegionRepositoryAsync regionRepositoryAsync;
+        public CustomerServiceAsync(ICustomerRepositoryAsync customerRepository,
+            IRegionRepositoryAsync regionRepository)
         {
             customerRepositoryAsync = customerRepository;
+            regionRepositoryAsync = regionRepository;
         }
 
         public async Task<int> AddCustomerAsync(CustomerRequestModel newCustomer)
@@ -46,7 +49,8 @@ namespace CRMApp.Infrastructure.Service
             {
                 List<CustomerResponseModel> result = new List<CustomerResponseModel>();
                 foreach (var item in collection)
-                {
+                {   
+                    var region = await regionRepositoryAsync.GetByIdAsync(item.Id);
                     CustomerResponseModel customerResponse = new CustomerResponseModel();
                     customerResponse.Address = item.Address;
                     customerResponse.City = item.City;
@@ -55,7 +59,8 @@ namespace CRMApp.Infrastructure.Service
                     customerResponse.Name = item.Name;
                     customerResponse.Phone = item.Phone;
                     customerResponse.PostalCode = item.PostalCode;
-                    customerResponse.RegionId = item.RegionId;
+                    customerResponse.Region = region.Name;
+                    //customerResponse.RegionId = item.RegionId;
                     customerResponse.Title = item.Title;
                     result.Add(customerResponse);
                 }
