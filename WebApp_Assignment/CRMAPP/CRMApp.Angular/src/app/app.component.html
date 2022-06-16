@@ -1,0 +1,29 @@
+<router-outlet></router-outlet>
+<div class="container">
+  <h1>{{pageName}}</h1>
+
+  <input type="text" placeholder="{{myPlaceHolder + ' lol'}}" /><br/><br/>
+
+  <div *ngIf="toyBoolVar; else stateChangeButton">
+    The boolean value is true.
+    <input type="button" value="Click to hide context" (click)="stateChange()"/>
+  </div>
+  <ng-template #stateChangeButton>
+    <input type="button" value="Click to show hidden context" (click)="stateChange()"/>
+  </ng-template><br/><br/>
+
+  <ul *ngFor="let c of colors">
+    <li>{{c}}</li>
+  </ul>
+
+  <select>
+    <option *ngFor="let c of colors">{{c}}</option>
+  </select><br/><br/>
+
+  <table>
+    <tr *ngFor="let c of colors; index as i">
+      <td>{{c}}</td>
+      <td>{{i+1}}</td>
+    </tr>
+  </table>
+</div>
