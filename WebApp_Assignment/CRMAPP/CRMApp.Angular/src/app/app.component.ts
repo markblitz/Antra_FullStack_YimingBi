@@ -7,12 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CRMApp.Angular'
-  pageName = 'Employee Table'
-  myPlaceHolder = "Please type here"
-  toyBoolVar = false
-  colors = ["red", "yellow", "green", "blue", "black"]
-
-  stateChange(){
-    this.toyBoolVar = !this.toyBoolVar;
-  }
+  
 }
