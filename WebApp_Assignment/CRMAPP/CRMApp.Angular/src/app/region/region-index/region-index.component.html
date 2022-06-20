@@ -1,0 +1,17 @@
+<h1>Region index</h1>
+<hr/>
+
+<table class="table table-striped table-hover table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of regions">
+            <td>{{e.id}}</td>
+            <td>{{e.name}}</td>
+        </tr>
+    </tbody>
+</table>

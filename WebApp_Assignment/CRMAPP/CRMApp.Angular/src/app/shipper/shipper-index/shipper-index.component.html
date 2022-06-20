@@ -1,0 +1,19 @@
+<h1>Shipper index</h1>
+<hr/>
+
+<table class="table table-striped table-hover table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of shippers">
+            <td>{{e.id}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.phone}}</td>
+        </tr>
+    </tbody>
+</table>

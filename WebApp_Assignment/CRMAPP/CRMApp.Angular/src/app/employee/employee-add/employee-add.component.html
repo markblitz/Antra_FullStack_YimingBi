@@ -1,0 +1,76 @@
+<h1>Create new employee</h1>
+<hr/>
+<form #newEmployee="ngForm" (submit)="insertEmployee(newEmployee)">
+    <div class="row m-3">
+        <div class="col-3">
+            <label for="firstName">First name</label>
+            <input id="firstName" [(ngModel)]="employee.firstName" name="firstName" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="lastName">Last name</label>
+            <input id="lastName" [(ngModel)]="employee.lastName" name="lastName" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="phone">Phone</label>
+            <input id="phone" [(ngModel)]="employee.phone" name="phone" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="titleOfCourtesy">Title of courtesy</label>
+            <input id="titleOfCourtesy" [(ngModel)]="employee.titleOfCourtesy" name="titleOfCourtesy" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-3">
+            <label for="bitrhDate">Birth date</label>
+            <input type="date" id="bitrhDate" [(ngModel)]="employee.bitrhDate" name="bitrhDate" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="hireDate">Hire date</label>
+            <input type="date" id="hireDate" [(ngModel)]="employee.hireDate" name="hireDate" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="title">Title</label>
+            <input id="title" [(ngModel)]="employee.title" name="title" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="reportsTo">Reports to</label>
+            <input id="reportsTo" [(ngModel)]="employee.reportsTo" name="reportsTo" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="regionId">Region</label>
+            <input id="regionId" [(ngModel)]="employee.regionId" name="regionId" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-6">
+            <label for="address">Address</label>
+            <input id="address" [(ngModel)]="employee.address" name="address" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="city">City</label>
+            <input id="city" [(ngModel)]="employee.city" name="city" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="country">Country</label>
+            <input id="country" [(ngModel)]="employee.country" name="country" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="postalCode">Postal code</label>
+            <input id="postalCode" [(ngModel)]="employee.postalCode" name="postalCode" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-8">
+            <label for="photoPath">Photo path</label>
+            <input id="photoPath" [(ngModel)]="employee.photoPath" name="photoPath" class="form-control" />
+        </div>
+    </div>
+
+    <div class="m-3">
+        <input type="submit" value="Add employee" class="btn btn-primary" />
+    </div>
+    
+</form>

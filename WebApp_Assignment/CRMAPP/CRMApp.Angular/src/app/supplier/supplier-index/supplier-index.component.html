@@ -1,0 +1,37 @@
+<h1>Supplier index</h1>
+<hr/>
+
+<table class="table table-striped table-hover table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Company name</th>
+            <th>Contact name</th>
+            <th>Contact title</th>
+
+            <th>Address</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Postal code</th>
+
+            <th>Region</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of suppliers">
+            <td>{{e.id}}</td>
+            <td>{{e.companyName}}</td>
+            <td>{{e.contactName}}</td>
+            <td>{{e.contactTitle}}</td>
+
+            <td>{{e.address}}</td>
+            <td>{{e.city}}</td>
+            <td>{{e.country}}</td>
+            <td>{{e.postalCode}}</td>
+
+            <td>{{e.regionId}}</td>
+            <td>{{e.phone}}</td>
+        </tr>
+    </tbody>
+</table>

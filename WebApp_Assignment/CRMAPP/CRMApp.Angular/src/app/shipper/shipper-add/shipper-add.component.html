@@ -1,0 +1,19 @@
+<h1>Create new employee</h1>
+<hr/>
+<form #newShipper="ngForm" (submit)="insertShipper(newShipper)">
+    <div class="row m-3">
+        <div class="col-3">
+            <label for="name">Name</label>
+            <input id="name" [(ngModel)]="shipper.name" name="name" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="phone">Phone</label>
+            <input id="phone" [(ngModel)]="shipper.phone" name="phone" class="form-control" />
+        </div>
+    </div>
+
+    <div class="m-3">
+        <input type="submit" value="Add shipper" class="btn btn-primary" />
+    </div>
+    
+</form>

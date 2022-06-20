@@ -1,0 +1,35 @@
+<h1>Customer index</h1>
+<hr/>
+
+<table class="table table-striped table-hover table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Phone</th>
+
+            <th>Address</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Postal code</th>
+
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of customers">
+            <td>{{e.id}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.title}}</td>
+            <td>{{e.phone}}</td>
+
+            <td>{{e.address}}</td>
+            <td>{{e.city}}</td>
+            <td>{{e.country}}</td>
+            <td>{{e.postalCode}}</td>
+
+            <td>{{e.regionId}}</td>
+        </tr>
+    </tbody>
+</table>

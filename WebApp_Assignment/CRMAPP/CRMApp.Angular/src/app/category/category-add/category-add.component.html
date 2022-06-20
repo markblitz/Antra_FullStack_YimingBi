@@ -1,0 +1,22 @@
+<h1>Create new category</h1>
+<hr/>
+<form #newCategory="ngForm" (submit)="insertCategory(newCategory)">
+    <div class="row m-3">
+        <div class="col-3">
+            <label for="name">Name</label>
+            <input id="name" [(ngModel)]="category.name" name="name" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-6">
+            <label for="description">Description</label>
+            <textarea id="description" [(ngModel)]="category.description" name="description" class="form-control" ></textarea>
+        </div>
+    </div>
+
+    <div class="m-3">
+        <input type="submit" value="Add category" class="btn btn-primary" />
+    </div>
+    
+</form>

@@ -3,24 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductIndexComponent } from './product/product-index/product-index.component';
-import { ProductAddComponent } from './product/product-add/product-add.component';
-import { ProductEditComponent } from './product/product-edit/product-edit.component';
-import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
-import { FormsModule } from '@angular/forms';
+import { CategoryModule } from './category/category.module';
+import { CustomerModule } from './customer/customer.module';
+import { EmployeeModule } from './employee/employee.module';
+import { ProductModule } from './product/product.module';
+import { RegionModule } from './region/region.module';
+import { ShipperModule } from './shipper/shipper.module';
+import { SupplierModule } from './supplier/supplier.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductIndexComponent,
-    ProductAddComponent,
-    ProductEditComponent,
-    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    CategoryModule,
+    CustomerModule,
+    EmployeeModule,
+    ProductModule,
+    RegionModule,
+    ShipperModule,
+    SupplierModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,53 @@
+<h1>Create new supplier</h1>
+<hr/>
+<form #newSupplier="ngForm" (submit)="insertSupplier(newSupplier)">
+    <div class="row m-3">
+        <div class="col-3">
+            <label for="companyName">Company name</label>
+            <input id="companyName" [(ngModel)]="supplier.companyName" name="companyName" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="contactName">Contact name</label>
+            <input id="contactName" [(ngModel)]="supplier.contactName" name="contactName" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="contactTitle">Contact title</label>
+            <input id="contactTitle" [(ngModel)]="supplier.contactTitle" name="contactTitle" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="phone">Phone</label>
+            <input id="phone" [(ngModel)]="supplier.phone" name="phone" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-2">
+            <label for="regionId">Region</label>
+            <input id="regionId" [(ngModel)]="supplier.regionId" name="regionId" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-6">
+            <label for="address">Address</label>
+            <input id="address" [(ngModel)]="supplier.address" name="address" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="city">City</label>
+            <input id="city" [(ngModel)]="supplier.city" name="city" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="country">Country</label>
+            <input id="country" [(ngModel)]="supplier.country" name="country" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="postalCode">Postal code</label>
+            <input id="postalCode" [(ngModel)]="supplier.postalCode" name="postalCode" class="form-control" />
+        </div>
+    </div>
+
+    <div class="m-3">
+        <input type="submit" value="Add supplier" class="btn btn-primary" />
+    </div>
+    
+</form>

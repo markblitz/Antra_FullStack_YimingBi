@@ -7,16 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductIndexComponent implements OnInit {
 
-  dummyProducts = [
-    {id:1, name:"IPhone 13 mini", price:"799"},
-    {id:2, name:"IPhone 13", price:"899"},
-    {id:3, name:"IPhone 13 pro", price:"999"},
-    {id:4, name:"IPhone 13 pro max", price:"1099"}
-  ]
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  products=[
+    {id:1, name:"demo1", supplierId:0, categoryId:0, quantityPerUnit:"",
+      unitPrice:0, unitInStock:0, unitsOnOrder:0, reorderLevel:0,
+      discontinued:false},
+    {id:2, name:"demo2", supplierId:0, categoryId:0, quantityPerUnit:"",
+      unitPrice:0, unitInStock:0, unitsOnOrder:0, reorderLevel:0,
+      discontinued:false},
+    {id:3, name:"demo3", supplierId:0, categoryId:0, quantityPerUnit:"",
+      unitPrice:0, unitInStock:0, unitsOnOrder:0, reorderLevel:0,
+      discontinued:false},
+    {id:4, name:"demo4", supplierId:0, categoryId:0, quantityPerUnit:"",
+      unitPrice:0, unitInStock:0, unitsOnOrder:0, reorderLevel:0,
+      discontinued:false}
+  ]
 }

@@ -1,1 +1,56 @@
-<p>product-add works!</p>
+<h1>Create new product</h1>
+<hr/>
+<form #newProduct="ngForm" (submit)="insertProduct(newProduct)">
+    <div class="row m-3">
+        <div class="col-3">
+            <label for="name">Name</label>
+            <input id="name" [(ngModel)]="product.name" name="name" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="supplierId">Supplier</label>
+            <input id="supplierId" [(ngModel)]="product.supplierId" name="supplierId" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="categoryId">Category</label>
+            <input id="categoryId" [(ngModel)]="product.categoryId" name="categoryId" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-4">
+            <label for="quantityPerUnit">Quantity per unit</label>
+            <input id="quantityPerUnit" [(ngModel)]="product.quantityPerUnit" name="quantityPerUnit" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="unitPrice">Unit price</label>
+            <input id="unitPrice" [(ngModel)]="product.unitPrice" name="unitPrice" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="unitInStock">Unit in stock</label>
+            <input id="unitInStock" [(ngModel)]="product.unitInStock" name="unitInStock" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="unitsOnOrder">Units on order</label>
+            <input id="unitsOnOrder" [(ngModel)]="product.unitsOnOrder" name="unitsOnOrder" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="reorderLevel">Reorder level</label>
+            <input id="reorderLevel" [(ngModel)]="product.reorderLevel" name="reorderLevel" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-1">
+            <label for="discontinued">Discontinued</label>
+        <select id="discontinued" [(ngModel)]="product.discontinued" name="discontinued" class="form-control">
+            <option value="0">False</option>
+            <option value="1">True</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="m-3">
+        <input type="submit" value="Add product" class="btn btn-primary" />
+    </div>
+    
+</form>

@@ -1,21 +1,37 @@
-<div class="container">
-    <h1>Product list</h1>
-    <hr />
+<h1>Product index</h1>
+<hr/>
 
-    <table class="table table-striped table-hover">
-        <thead class="table table-dark">
-            <tr>
-                <th>Product Id</th>
-                <th>Name</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let product of dummyProducts">
-                <td>{{product.id}}</td>
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<table class="table table-striped table-hover table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Supplier</th>
+            <th>Category</th>
+
+            <th>Quantity per unit</th>
+            <th>Unit price</th>
+            
+            <th>Unit in stock</th>
+            <th>Units on order</th>
+            <th>Reorder level</th>
+            <th>Discontinued</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of products">
+            <td>{{e.id}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.supplierId}}</td>
+            <td>{{e.categoryId}}</td>
+
+            <td>{{e.quantityPerUnit}}</td>
+            <td>{{e.unitPrice}}</td>
+
+            <td>{{e.unitInStock}}</td>
+            <td>{{e.unitsOnOrder}}</td>
+            <td>{{e.reorderLevel}}</td>
+            <td>{{e.discontinued}}</td>
+        </tr>
+    </tbody>
+</table>

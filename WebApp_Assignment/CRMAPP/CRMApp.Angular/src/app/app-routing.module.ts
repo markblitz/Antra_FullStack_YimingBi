@@ -1,20 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ProductIndexComponent } from './product/product-index/product-index.component';
-import { ProductAddComponent } from './product/product-add/product-add.component';
-import { ProductEditComponent } from './product/product-edit/product-edit.component';
-import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
-
 const routes: Routes = [
-  { path: '', component: ProductIndexComponent },
-
-  { path: 'product', component: ProductIndexComponent },
-  { path: 'product/index', component: ProductIndexComponent },
-  { path: 'product/add', component: ProductAddComponent },
-  { path: 'product/edit/:id', component: ProductEditComponent },
-  
-  { path: '**', component: NotFoundPageComponent }
+  {path:'category', loadChildren:()=>import('./category/category.module').then(m=>m.CategoryModule)},
+  {path:'customer', loadChildren:()=>import('./customer/customer.module').then(m=>m.CustomerModule)},
+  {path:'employee', loadChildren:()=>import('./employee/employee.module').then(m=>m.EmployeeModule)},
+  {path:'product', loadChildren:()=>import('./product/product.module').then(m=>m.ProductModule)},
+  {path:'region', loadChildren:()=>import('./region/region.module').then(m=>m.RegionModule)},
+  {path:'shipper', loadChildren:()=>import('./shipper/shipper.module').then(m=>m.ShipperModule)},
+  {path:'supplier', loadChildren:()=>import('./supplier/supplier.module').then(m=>m.SupplierModule)}
 ];
 
 @NgModule({

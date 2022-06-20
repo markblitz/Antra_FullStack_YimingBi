@@ -1,0 +1,46 @@
+<h1>Create new customer</h1>
+<hr/>
+<form #newCustomer="ngForm" (submit)="insertCustomer(newCustomer)">
+    <div class="row m-3">
+        <div class="col-3">
+            <label for="name">Name</label>
+            <input id="name" [(ngModel)]="customer.name" name="name" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="title">Title</label>
+            <input id="title" [(ngModel)]="customer.title" name="title" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="phone">Phone</label>
+            <input id="phone" [(ngModel)]="customer.phone" name="phone" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="regionId">Region</label>
+            <input id="regionId" [(ngModel)]="customer.regionId" name="regionId" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-6">
+            <label for="address">Address</label>
+            <input id="address" [(ngModel)]="customer.address" name="address" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="city">City</label>
+            <input id="city" [(ngModel)]="customer.city" name="city" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="country">Country</label>
+            <input id="country" [(ngModel)]="customer.country" name="country" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="postalCode">Postal code</label>
+            <input id="postalCode" [(ngModel)]="customer.postalCode" name="postalCode" class="form-control" />
+        </div>
+    </div>
+
+    <div class="m-3">
+        <input type="submit" value="Add customer" class="btn btn-primary" />
+    </div>
+    
+</form>

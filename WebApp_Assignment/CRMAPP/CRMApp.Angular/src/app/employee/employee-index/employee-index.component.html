@@ -1,0 +1,47 @@
+<h1>Employee index</h1>
+<hr/>
+
+<table class="table table-striped table-hover table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Title of courtesy</th>
+            <th>Title</th>
+            <th>Phone</th>
+
+            <th>Birth date</th>
+            <th>Hire date</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Postal code</th>
+
+            <th>Region</th>
+            <th>Reports to</th>
+            <th>Photo path</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of employees">
+            <td>{{e.id}}</td>
+            <td>{{e.firstName}}</td>
+            <td>{{e.lastName}}</td>
+            <td>{{e.titleOfCourtesy}}</td>
+            <td>{{e.title}}</td>
+            <td>{{e.phone}}</td>
+
+            <td>{{e.bitrhDate | date:'longDate'}}</td>
+            <td>{{e.hireDate | date:'longDate'}}</td>
+            <td>{{e.address}}</td>
+            <td>{{e.city}}</td>
+            <td>{{e.country}}</td>
+            <td>{{e.postalCode}}</td>
+
+            <td>{{e.regionId}}</td>
+            <td>{{e.reportsTo}}</td>
+            <td>{{e.photoPath}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+<h1>Create new region</h1>
+<hr/>
+<form #newRegion="ngForm" (submit)="insertRegion(newRegion)">
+    <div class="row m-3">
+        <div class="col-3">
+            <label for="name">Name</label>
+            <input id="name" [(ngModel)]="region.name" name="name" class="form-control" />
+        </div>
+    </div>
+
+    <div class="m-3">
+        <input type="submit" value="Add region" class="btn btn-primary" />
+    </div>
+    
+</form>
