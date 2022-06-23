@@ -18,6 +18,13 @@ builder.Services.AddSqlServer<CrmDBContext>(builder.Configuration.GetConnectionS
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod();
+    });
+});
 
 // Dependency injection for repositoryies
 builder.Services.AddScoped<ICategoryRepositoryAsync, CategoryRepositoryAsync>();
@@ -51,6 +58,8 @@ app.UseSerilogRequestLogging();
 app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthorization();
 

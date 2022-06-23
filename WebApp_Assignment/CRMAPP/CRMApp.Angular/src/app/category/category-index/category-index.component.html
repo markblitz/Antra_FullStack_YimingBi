@@ -7,13 +7,20 @@
             <th>Id</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Options</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let e of categories">
-            <td>{{e.id}}</td>
-            <td>{{e.name}}</td>
-            <td>{{e.description}}</td>
+        <tr *ngFor="let category of categories">
+            <td>{{category.id}}</td>
+            <td>{{category.name}}</td>
+            <td>{{category.description}}</td>
+            <td>
+                <a (click)="editCategory(category.id)">Edit</a>&nbsp;
+                <a (click)="deleteCategory(category.id)">Delete</a>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<input type="button" class="btn btn-primary" [routerLink]="'/add'" value="Add new category"/>

@@ -1,7 +1,7 @@
-export interface Supplier{
-    companyName:string,
-    contactName:string,
-    contactTitle:string,
+export interface CustomerRequest{
+    id:number,
+    name:string,
+    title:string,
     address:string,
     city:string,
     regionId:number,

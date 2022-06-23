@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { region } from 'src/entities/region';
+import { Region } from 'src/entities/region';
 
 @Component({
   selector: 'app-region-add',
@@ -14,7 +14,8 @@ export class RegionAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  region:region={
+  region:Region={
+    id: 0,
     name: ''
   }
 

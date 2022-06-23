@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Customer } from 'src/entities/customer';
+import { CustomerRequest } from 'src/entities/RequestModel/customerRequest';
 
 @Component({
   selector: 'app-customer-add',
@@ -14,15 +14,16 @@ export class CustomerAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  customer:Customer={
-    name:"",
-    title:"",
-    address:"",
-    city:"",
-    regionId:0,
-    postalCode:"",
-    country:"",
-    phone:""
+  customer:CustomerRequest={
+    id: 0,
+    name: '',
+    title: '',
+    address: '',
+    city: '',
+    regionId: 0,
+    postalCode: '',
+    country: '',
+    phone: ''
   }
 
   insertCustomer(form:NgForm){

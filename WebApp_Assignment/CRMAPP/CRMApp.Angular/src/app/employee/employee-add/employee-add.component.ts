@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Employee } from 'src/entities/employee';
+import { EmployeeRequest } from 'src/entities/RequestModel/employeeRequest';
 
 @Component({
   selector: 'app-employee-add',
@@ -14,21 +14,22 @@ export class EmployeeAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  employee:Employee={
-    firstName:'',
-    lastName:'',
-    title:'',
-    titleOfCourtesy:'',
-    bitrhDate:new Date(),
-    hireDate:new Date(),
-    address:'',
-    city:'',
-    regionId:0,
-    postalCode:'',
-    country:'',
-    phone:'',
-    reportsTo:0,
-    photoPath:''
+  employee:EmployeeRequest={
+    id: 0,
+    firstName: '',
+    lastName: '',
+    title: '',
+    titleOfCourtesy: '',
+    bitrhDate: new Date(),
+    hireDate: new Date(),
+    address: '',
+    city: '',
+    regionId: 0,
+    postalCode: '',
+    country: '',
+    phone: '',
+    reportsTo: 0,
+    photoPath: ''
   }
 
   insertEmployee(form:NgForm){

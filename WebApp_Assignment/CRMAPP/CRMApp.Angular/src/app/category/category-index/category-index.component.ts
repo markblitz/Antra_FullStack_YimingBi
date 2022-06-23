@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Category } from 'src/entities/category';
+import { CategoryService } from 'src/services/category.service';
+
 
 @Component({
   selector: 'app-category-index',
@@ -7,15 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryIndexComponent implements OnInit {
 
-  constructor() { }
+  categories: Category[] = [];
+
+  constructor(private categoryService: CategoryService,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.getCategories();
   }
 
-  categories=[
-    {id: 1, name:"demo1", description:""},
-    {id: 2, name:"demo2", description:""},
-    {id: 3, name:"demo3", description:""},
-    {id: 4, name:"demo4", description:""},
-  ]
+  getCategories() {
+    this.categoryService.getAllCategory().subscribe(
+      (data) => { this.categories = data }
+    );
+  }
+
+  deleteCategory(id: number) {
+    this.categoryService.deleteCategory(id).subscribe(
+      (d: any) => { this.getCategories() }
+    );
+  }
+
+  editCategory(id:number){
+    //console.log(id)
+    this.router.navigate(['/category/edit/'+id]);
+  }
+
 }

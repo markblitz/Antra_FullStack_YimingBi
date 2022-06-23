@@ -4,7 +4,10 @@ import { CategoryIndexComponent } from './category-index/category-index.componen
 import { CategoryAddComponent } from './category-add/category-add.component';
 import { CategoryEditComponent } from './category-edit/category-edit.component';
 import { CategoryRoutingModule } from './category-routing.module';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { CategoryService } from 'src/services/category.service';
 
 
 
@@ -17,7 +20,12 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CategoryRoutingModule,
-    FormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule,
+  ],
+  providers: [
+    CategoryService
   ]
 })
 export class CategoryModule { }

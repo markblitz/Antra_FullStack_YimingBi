@@ -15,6 +15,7 @@ export class ShipperAddComponent implements OnInit {
   }
 
   shipper:Shipper={
+    id: 0,
     name: '',
     phone: ''
   }

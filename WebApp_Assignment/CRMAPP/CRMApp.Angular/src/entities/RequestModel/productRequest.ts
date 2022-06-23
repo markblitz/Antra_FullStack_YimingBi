@@ -1,4 +1,5 @@
-export interface Product{
+export interface ProductRequest{
+    id:number,
     name:string,
     supplierId:number,
     categoryId:number,

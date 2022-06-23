@@ -54,7 +54,11 @@ namespace CRMApp.WebAPI.Controllers
         public async Task<IActionResult> DeleteCategory(int id)
         {
             var result = await customerServiceAsync.DeleteCustomerAsync(id);
-            if (result > 0) { return Ok($"Customer with Id = {id} has been deleted!"); }
+            if (result > 0)
+            {
+                var response = new { Message = "Delete Successfully" };
+                return Ok(response);
+            }
             return BadRequest();
         }
     }

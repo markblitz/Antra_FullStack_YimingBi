@@ -1,4 +1,5 @@
-export interface Employee{
+export interface EmployeeRequest{
+    id:number,
     firstName:string,
     lastName:string,
     title:string,

@@ -7,7 +7,7 @@ import { CategoryIndexComponent } from "./category-index/category-index.componen
 const routes:Routes=[
     {path:'index', component:CategoryIndexComponent},
     {path:'add', component:CategoryAddComponent},
-    {path:'edit', component:CategoryEditComponent}
+    {path:'edit/:id', component:CategoryEditComponent}
 ]
 
 @NgModule(

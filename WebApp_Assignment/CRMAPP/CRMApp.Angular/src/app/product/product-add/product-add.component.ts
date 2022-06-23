@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Product } from 'src/entities/product';
+import { ProductRequest } from 'src/entities/RequestModel/productRequest';
 
 @Component({
   selector: 'app-product-add',
@@ -14,7 +14,8 @@ export class ProductAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  product:Product={
+  product:ProductRequest={
+    id: 0,
     name: '',
     supplierId: 0,
     categoryId: 0,

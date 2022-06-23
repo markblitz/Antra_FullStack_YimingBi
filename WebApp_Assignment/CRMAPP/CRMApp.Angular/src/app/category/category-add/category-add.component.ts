@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Category } from 'src/entities/category';
+import { CategoryService } from 'src/services/category.service';
 
 @Component({
   selector: 'app-category-add',
@@ -9,17 +10,33 @@ import { Category } from 'src/entities/category';
 })
 export class CategoryAddComponent implements OnInit {
 
-  constructor() { }
+  categoryForm: FormGroup;
+  category: Category = {
+    id: 0,
+    name: '',
+    description: ''
+  }
+  insertSuccessful: boolean = false;
+
+  constructor(private builder: FormBuilder,
+    private categoryService: CategoryService) {
+    this.categoryForm = builder.group(
+      {
+        'name': new FormControl(null, [Validators.required]),
+        'description': new FormControl(null)
+      }
+    );
+  }
 
   ngOnInit(): void {
   }
 
-  category:Category={
-    name:"",
-    description:""
-  }
-
-  insertCategory(form:NgForm){
-    console.log(form.value)
+  insertCategory() {
+    //console.log(this.categoryForm.value);
+    this.category.name = this.categoryForm.value["name"];
+    this.category.description = this.categoryForm.value["description"];
+    this.categoryService.insertCategory(this.category).subscribe((d: any) => {
+      this.insertSuccessful = true;
+    });
   }
 }

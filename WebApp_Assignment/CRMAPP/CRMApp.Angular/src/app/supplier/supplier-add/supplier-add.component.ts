@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Supplier } from 'src/entities/supplier';
+import { SupplierRequest } from 'src/entities/RequestModel/supplierRequest';
 
 @Component({
   selector: 'app-supplier-add',
@@ -14,7 +14,8 @@ export class SupplierAddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  supplier:Supplier={
+  supplier:SupplierRequest={
+    id: 0,
     companyName: '',
     contactName: '',
     contactTitle: '',
