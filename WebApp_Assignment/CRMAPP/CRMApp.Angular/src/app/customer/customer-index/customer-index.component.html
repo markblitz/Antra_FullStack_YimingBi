@@ -15,21 +15,28 @@
             <th>Postal code</th>
 
             <th>Region</th>
+            <th>Options</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let e of customers">
-            <td>{{e.id}}</td>
-            <td>{{e.name}}</td>
-            <td>{{e.title}}</td>
-            <td>{{e.phone}}</td>
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.id}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.title}}</td>
+            <td>{{customer.phone}}</td>
 
-            <td>{{e.address}}</td>
-            <td>{{e.city}}</td>
-            <td>{{e.country}}</td>
-            <td>{{e.postalCode}}</td>
+            <td>{{customer.address}}</td>
+            <td>{{customer.city}}</td>
+            <td>{{customer.country}}</td>
+            <td>{{customer.postalCode}}</td>
 
-            <td>{{e.regionId}}</td>
+            <td>{{customer.region}}</td>
+            <td>
+                <a (click)="editCustomer(customer.id)" class="text-wrap">Edit</a>&nbsp;
+                <a (click)="deleteCustomer(customer.id)" class="text-wrap">Delete</a>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<input type="button" class="btn btn-primary" [routerLink]="'/customer/add'" value="Add new customer"/>

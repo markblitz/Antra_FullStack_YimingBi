@@ -16,11 +16,11 @@
             <td>{{category.name}}</td>
             <td>{{category.description}}</td>
             <td>
-                <a (click)="editCategory(category.id)">Edit</a>&nbsp;
-                <a (click)="deleteCategory(category.id)">Delete</a>
+                <a (click)="editCategory(category.id)" class="text-wrap">Edit</a>&nbsp;
+                <a (click)="deleteCategory(category.id)" class="text-wrap">Delete</a>
             </td>
         </tr>
     </tbody>
 </table>
 
-<input type="button" class="btn btn-primary" [routerLink]="'/add'" value="Add new category"/>
+<input type="button" class="btn btn-primary" [routerLink]="'/category/add'" value="Add new category"/>

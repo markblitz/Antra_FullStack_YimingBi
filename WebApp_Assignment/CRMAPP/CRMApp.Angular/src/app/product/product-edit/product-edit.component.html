@@ -1,1 +1,74 @@
-<p>product-edit works!</p>
+<div *ngIf="editSuccessful" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Edit success!</strong> Go to <a [routerLink]="'/product/index'">product index</a>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<h1>Edit product</h1>
+<hr/>
+
+<form [formGroup]="productForm">
+    <div class="row m-3">
+        <div class="col-3">
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" class="form-control" />
+            <div class="text-danger" *ngIf="productForm.get('name')?.hasError('required') && productForm.get('name')?.touched">
+                Customer name is required!
+            </div>
+        </div>
+        <div class="col-3">
+            <label for="categoryId">Category</label>
+            <select id="categoryId" formControlName="categoryId" class="form-control">
+                <option *ngFor="let category of categories, index as i" value={{category.id}}>{{category.id}}.{{category.name}}</option>
+            </select>
+            <div class="text-danger" *ngIf="productForm.get('categoryId')?.hasError('required') && productForm.get('categoryId')?.touched">
+                Product category is required!
+            </div>
+        </div>
+        <div class="col-3">
+            <label for="supplierId">Supplier</label>
+            <select id="supplierId" formControlName="supplierId" class="form-control">
+                <option *ngFor="let supplier of suppliers, index as i" value={{supplier.id}}>{{supplier.id}}.{{supplier.companyName}}</option>
+            </select>
+            <div class="text-danger" *ngIf="productForm.get('supplierId')?.hasError('required') && productForm.get('supplierId')?.touched">
+                Product supplier is required!
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-6">
+            <label for="quantityPerUnit">Quantity per unit</label>
+            <input id="quantityPerUnit" formControlName="quantityPerUnit" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-2">
+            <label for="unitPrice">Unit price</label>
+            <input id="unitPrice" formControlName="unitPrice" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="unitInStock">Unit in stock</label>
+            <input id="unitInStock" formControlName="unitInStock" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="unitsOnOrder">Units on order</label>
+            <input id="unitsOnOrder" formControlName="unitsOnOrder" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="reorderLevel">Reorder level</label>
+            <input id="reorderLevel" formControlName="reorderLevel" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-2">
+            <input id="discontinued" formControlName="discontinued" class="form-check-input" type="checkbox" /><label for="discontinued">Discontinued</label>
+        </div>
+    </div>
+
+    <div class="m-3">
+        <input type="button" value="Edit product" class="btn btn-primary" (click)="saveProduct()" [disabled]="!productForm.valid"/>
+    </div>
+    
+</form>

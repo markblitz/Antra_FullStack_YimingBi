@@ -14,9 +14,12 @@ namespace CRMApp.Infrastructure.Service
     public class ProductServiceAsync : IProductServiceAsync
     {
         private readonly IProductRepositoryAsync productRepositoryAsync;
-        public ProductServiceAsync(IProductRepositoryAsync productRepository)
+        private readonly ICategoryRepositoryAsync categoryRepositoryAsync;
+        public ProductServiceAsync(IProductRepositoryAsync productRepository, 
+            ICategoryRepositoryAsync categoryRepositoryAsync)
         {
             productRepositoryAsync = productRepository;
+            this.categoryRepositoryAsync = categoryRepositoryAsync;
         }
 
         public async Task<int> AddProductAsync(ProductRequestModel newProduct)
@@ -47,8 +50,9 @@ namespace CRMApp.Infrastructure.Service
                 List<ProductResponseModel> result = new List<ProductResponseModel>();
                 foreach (var item in collection)
                 {
+                    var category = await categoryRepositoryAsync.GetByIdAsync(item.CategoryId);
                     ProductResponseModel productResponse = new ProductResponseModel();
-                    productResponse.CategoryId = item.CategoryId;
+                    productResponse.Category = category.Name;
                     productResponse.Discontinued = item.Discontinued;
                     productResponse.Id = item.Id;
                     productResponse.Name = item.Name;

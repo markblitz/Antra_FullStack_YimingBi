@@ -7,7 +7,7 @@ import { ProductIndexComponent } from "./product-index/product-index.component";
 const routes:Routes=[
     {path:'index', component:ProductIndexComponent},
     {path:'add', component:ProductAddComponent},
-    {path:'edit', component:ProductEditComponent}
+    {path:'edit/:id', component:ProductEditComponent}
 ]
 
 @NgModule(

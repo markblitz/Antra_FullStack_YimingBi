@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Region } from 'src/entities/region';
+import { RegionService } from 'src/services/region.service';
 
 @Component({
   selector: 'app-region-index',
@@ -7,15 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegionIndexComponent implements OnInit {
 
-  constructor() { }
+  regions: Region[] = [];
+
+  constructor(private regionService: RegionService,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.getRegions();
   }
-  regions=[
-    {id:1, name:"demo1"},
-    {id:2, name:"demo2"},
-    {id:3, name:"demo3"},
-    {id:4, name:"demo4"}
-  ]
+  getRegions() {
+    this.regionService.getAllRegion().subscribe(
+      (data) => { this.regions = data }
+    );
+  }
+
+  deleteRegion(id: number) {
+    this.regionService.deleteRegion(id).subscribe(
+      (d: any) => { this.getRegions() }
+    );
+  }
+
+  editRegion(id: number) {
+    this.router.navigate(['/region/edit/' + id]);
+  }
 
 }

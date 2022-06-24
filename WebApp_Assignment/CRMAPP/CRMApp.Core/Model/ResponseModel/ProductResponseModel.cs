@@ -12,7 +12,7 @@ namespace CRMApp.Core.Model.ResponseModel
 
         public string Name { get; set; }
 
-        public int CategoryId { get; set; }
+        public string Category { get; set; }
 
         public string QuantityPerUnit { get; set; }
 

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SupplierResponse } from 'src/entities/ResponseModel/supplierResponse';
+import { SupplierService } from 'src/services/supplier.service';
 
 @Component({
   selector: 'app-supplier-index',
@@ -7,27 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupplierIndexComponent implements OnInit {
 
-  constructor() { }
+  suppliers: SupplierResponse[] = [];
+
+  constructor(private supplierService: SupplierService,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.getSuppliers();
+  }
+  getSuppliers() {
+    this.supplierService.getAllSupplier().subscribe(
+      (data) => { this.suppliers = data }
+    );
   }
 
-  suppliers = [
-    {
-      id: 1, companyName: "demo1", contactName: "demo1", contactTitle: "",
-      address: "", city: "", regionId: 0, postalCode: "", country: "", phone: ""
-    },
-    {
-      id: 2, companyName: "demo2", contactName: "demo2", contactTitle: "",
-      address: "", city: "", regionId: 0, postalCode: "", country: "", phone: ""
-    },
-    {
-      id: 3, companyName: "demo3", contactName: "demo3", contactTitle: "",
-      address: "", city: "", regionId: 0, postalCode: "", country: "", phone: ""
-    },
-    {
-      id: 4, companyName: "demo4", contactName: "demo4", contactTitle: "",
-      address: "", city: "", regionId: 0, postalCode: "", country: "", phone: ""
-    }
-  ]
+  deleteSupplier(id: number) {
+    this.supplierService.deleteSupplier(id).subscribe(
+      (d: any) => { this.getSuppliers() }
+    );
+  }
+
+  editSupplier(id: number) {
+    this.router.navigate(['/supplier/edit/' + id]);
+  }
+
 }

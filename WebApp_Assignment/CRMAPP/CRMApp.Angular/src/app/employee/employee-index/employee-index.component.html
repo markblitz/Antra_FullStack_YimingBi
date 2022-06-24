@@ -11,37 +11,30 @@
             <th>Title</th>
             <th>Phone</th>
 
-            <th>Birth date</th>
             <th>Hire date</th>
-            <th>Address</th>
             <th>City</th>
-            <th>Country</th>
-            <th>Postal code</th>
 
-            <th>Region</th>
-            <th>Reports to</th>
-            <th>Photo path</th>
+            <th>Options</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let e of employees">
-            <td>{{e.id}}</td>
-            <td>{{e.firstName}}</td>
-            <td>{{e.lastName}}</td>
-            <td>{{e.titleOfCourtesy}}</td>
-            <td>{{e.title}}</td>
-            <td>{{e.phone}}</td>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.titleOfCourtesy}}</td>
+            <td>{{employee.title}}</td>
+            <td>{{employee.phone}}</td>
 
-            <td>{{e.bitrhDate | date:'longDate'}}</td>
-            <td>{{e.hireDate | date:'longDate'}}</td>
-            <td>{{e.address}}</td>
-            <td>{{e.city}}</td>
-            <td>{{e.country}}</td>
-            <td>{{e.postalCode}}</td>
+            <td>{{employee.hireDate | date:'longDate'}}</td>
+            <td>{{employee.city}}</td>
 
-            <td>{{e.regionId}}</td>
-            <td>{{e.reportsTo}}</td>
-            <td>{{e.photoPath}}</td>
+            <td>
+                <a (click)="editEmployee(employee.id)" class="text-wrap">Edit</a>&nbsp;
+                <a (click)="deleteEmployee(employee.id)" class="text-wrap">Delete</a>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<input type="button" class="btn btn-primary" [routerLink]="'/employee/add'" value="Add new employee"/>

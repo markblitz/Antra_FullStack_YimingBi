@@ -1,19 +1,30 @@
-<h1>Create new employee</h1>
+<div *ngIf="insertSuccessful" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Add success!</strong> Go to <a [routerLink]="'/shipper/index'">shipper index</a>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<h1>Create new shipper</h1>
 <hr/>
-<form #newShipper="ngForm" (submit)="insertShipper(newShipper)">
+
+<form [formGroup]="shipperForm">
     <div class="row m-3">
         <div class="col-3">
             <label for="name">Name</label>
-            <input id="name" [(ngModel)]="shipper.name" name="name" class="form-control" />
+            <input id="name" formControlName="name" class="form-control" />
+            <div class="text-danger" *ngIf="shipperForm.get('name')?.hasError('required') && shipperForm.get('name')?.touched">
+                Shipper name is required!
+            </div>
         </div>
+    </div>
+    <div class="row m-3">
         <div class="col-3">
             <label for="phone">Phone</label>
-            <input id="phone" [(ngModel)]="shipper.phone" name="phone" class="form-control" />
+            <input id="phone" formControlName="phone" class="form-control" />
         </div>
     </div>
 
     <div class="m-3">
-        <input type="submit" value="Add shipper" class="btn btn-primary" />
+        <input type="button" value="Add shipper" class="btn btn-primary" (click)="insertShipper()" [disabled]="!shipperForm.valid"/>
     </div>
     
 </form>

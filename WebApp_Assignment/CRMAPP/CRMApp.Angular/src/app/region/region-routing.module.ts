@@ -8,7 +8,7 @@ import { RegionIndexComponent } from "./region-index/region-index.component";
 const routes:Routes=[
     {path:'index', component:RegionIndexComponent},
     {path:'add', component:RegionAddComponent},
-    {path:'edit', component:RegionEditComponent}
+    {path:'edit/:id', component:RegionEditComponent}
 ]
 
 @NgModule(

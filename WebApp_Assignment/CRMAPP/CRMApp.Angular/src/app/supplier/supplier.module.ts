@@ -4,7 +4,10 @@ import { SupplierIndexComponent } from './supplier-index/supplier-index.componen
 import { SupplierAddComponent } from './supplier-add/supplier-add.component';
 import { SupplierEditComponent } from './supplier-edit/supplier-edit.component';
 import { SupplierRoutingModule } from './supplier-routing.module';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { SupplierService } from 'src/services/supplier.service';
 
 
 
@@ -17,7 +20,12 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     SupplierRoutingModule,
-    FormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule,
+  ],
+  providers: [
+    SupplierService
   ]
 })
 export class SupplierModule { }

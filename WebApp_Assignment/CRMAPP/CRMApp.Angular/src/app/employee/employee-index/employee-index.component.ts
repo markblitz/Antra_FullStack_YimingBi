@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { EmployeeResponse } from 'src/entities/ResponseModel/employeeResponse';
+import { EmployeeService } from 'src/services/employee.service';
 
 @Component({
   selector: 'app-employee-index',
@@ -7,20 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeIndexComponent implements OnInit {
 
-  constructor() { }
+  employees:EmployeeResponse[] = [];
+
+  constructor(private employeeService:EmployeeService,
+    private router: Router) { }
 
   ngOnInit(): void {
+    this.getEmployees();
+  }
+  getEmployees() {
+    this.employeeService.getAllEmployee().subscribe(
+      (data) => { this.employees = data }
+    );
   }
 
-  employees=[
-    {id:1, firstName:"demo1", lastName:"demo1", title:"", titleOfCourtesy:"", bitrhDate:new Date, hireDate:new Date,
-      address:"", city:"", regionId:0, postalCode:"", country:"", phone:"", reportsTo:0, photoPath:""},
-    {id:2, firstName:"demo2", lastName:"demo2", title:"", titleOfCourtesy:"", bitrhDate:new Date, hireDate:new Date,
-      address:"", city:"", regionId:0, postalCode:"", country:"", phone:"", reportsTo:0, photoPath:""},
-    {id:3, firstName:"demo3", lastName:"demo3", title:"", titleOfCourtesy:"", bitrhDate:new Date, hireDate:new Date,
-      address:"", city:"", regionId:0, postalCode:"", country:"", phone:"", reportsTo:0, photoPath:""},
-    {id:4, firstName:"demo4", lastName:"demo4", title:"", titleOfCourtesy:"", bitrhDate:new Date, hireDate:new Date,
-      address:"", city:"", regionId:0, postalCode:"", country:"", phone:"", reportsTo:0, photoPath:""}
-  ]
+  deleteEmployee(id:number){
+    this.employeeService.deleteEmployee(id).subscribe(
+      (d: any) => { this.getEmployees() }
+    );
+  }
+
+  editEmployee(id:number){
+    this.router.navigate(['/employee/edit/'+id]);
+  }
 
 }

@@ -9,7 +9,7 @@ import { ShipperIndexComponent } from "./shipper-index/shipper-index.component";
 const routes:Routes=[
     {path:'index', component:ShipperIndexComponent},
     {path:'add', component:ShipperAddComponent},
-    {path:'edit', component:ShipperEditComponent}
+    {path:'edit/:id', component:ShipperEditComponent}
 ]
 
 @NgModule(

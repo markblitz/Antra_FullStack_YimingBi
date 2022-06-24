@@ -4,7 +4,7 @@ export interface EmployeeRequest{
     lastName:string,
     title:string,
     titleOfCourtesy:string,
-    bitrhDate:Date,
+    birthDate:Date,
     hireDate:Date,
     address:string,
     city:string,

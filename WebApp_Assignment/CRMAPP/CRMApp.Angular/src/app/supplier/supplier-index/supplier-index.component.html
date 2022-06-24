@@ -6,32 +6,22 @@
         <tr>
             <th>Id</th>
             <th>Company name</th>
-            <th>Contact name</th>
-            <th>Contact title</th>
-
-            <th>Address</th>
             <th>City</th>
-            <th>Country</th>
-            <th>Postal code</th>
 
-            <th>Region</th>
-            <th>Phone</th>
+            <th>Options</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let e of suppliers">
-            <td>{{e.id}}</td>
-            <td>{{e.companyName}}</td>
-            <td>{{e.contactName}}</td>
-            <td>{{e.contactTitle}}</td>
-
-            <td>{{e.address}}</td>
-            <td>{{e.city}}</td>
-            <td>{{e.country}}</td>
-            <td>{{e.postalCode}}</td>
-
-            <td>{{e.regionId}}</td>
-            <td>{{e.phone}}</td>
+        <tr *ngFor="let supplier of suppliers">
+            <td>{{supplier.id}}</td>
+            <td>{{supplier.companyName}}</td>
+            <td>{{supplier.city}}</td>
+            <td>
+                <a (click)="editSupplier(supplier.id)" class="text-wrap">Edit</a>&nbsp;
+                <a (click)="deleteSupplier(supplier.id)" class="text-wrap">Delete</a>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<input type="button" class="btn btn-primary" [routerLink]="'/supplier/add'" value="Add new supplier"/>

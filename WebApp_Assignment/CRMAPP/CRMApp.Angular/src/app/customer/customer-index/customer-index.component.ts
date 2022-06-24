@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CustomerResponse } from 'src/entities/ResponseModel/customerResponse';
+import { CustomerService } from 'src/services/customer.service';
 
 @Component({
   selector: 'app-customer-index',
@@ -7,27 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerIndexComponent implements OnInit {
 
-  constructor() { }
+  customers: CustomerResponse[] = [];
+
+  constructor(private customerService:CustomerService,
+    private router:Router) { }
 
   ngOnInit(): void {
+    this.getCustomers();
   }
 
-  customers = [
-    {
-      id: 1, name: "demo1", title: "", address: "", city: "", regionId: 0,
-      postalCode: "", country: "", phone: ""
-    },
-    {
-      id: 2, name: "demo2", title: "", address: "", city: "", regionId: 0,
-      postalCode: "", country: "", phone: ""
-    },
-    {
-      id: 3, name: "demo3", title: "", address: "", city: "", regionId: 0,
-      postalCode: "", country: "", phone: ""
-    },
-    {
-      id: 4, name: "demo4", title: "", address: "", city: "", regionId: 0,
-      postalCode: "", country: "", phone: ""
-    }
-  ]
+  getCustomers(){
+    this.customerService.getAllCustomer().subscribe(
+      (data) => { this.customers = data }
+    );
+  }
+
+  deleteCustomer(id:number){
+    this.customerService.deleteCustomer(id).subscribe(
+      (d: any) => { this.getCustomers() }
+    );
+  }
+
+  editCustomer(id:number){
+    this.router.navigate(['/customer/edit/'+id]);
+  }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductResponse } from 'src/entities/ResponseModel/productRespoonse';
+import { ProductService } from 'src/services/product.service';
 
 @Component({
   selector: 'app-product-index',
@@ -7,23 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductIndexComponent implements OnInit {
 
-  constructor() { }
+  products:ProductResponse[]=[];
+
+  constructor(private productService:ProductService,
+    private router:Router) { }
 
   ngOnInit(): void {
+    this.getProducts();
   }
 
-  products=[
-    {id:1, name:"demo1", supplierId:0, categoryId:0, quantityPerUnit:"",
-      unitPrice:0, unitInStock:0, unitsOnOrder:0, reorderLevel:0,
-      discontinued:false},
-    {id:2, name:"demo2", supplierId:0, categoryId:0, quantityPerUnit:"",
-      unitPrice:0, unitInStock:0, unitsOnOrder:0, reorderLevel:0,
-      discontinued:false},
-    {id:3, name:"demo3", supplierId:0, categoryId:0, quantityPerUnit:"",
-      unitPrice:0, unitInStock:0, unitsOnOrder:0, reorderLevel:0,
-      discontinued:false},
-    {id:4, name:"demo4", supplierId:0, categoryId:0, quantityPerUnit:"",
-      unitPrice:0, unitInStock:0, unitsOnOrder:0, reorderLevel:0,
-      discontinued:false}
-  ]
+  getProducts(){
+    this.productService.getAllProduct().subscribe(
+      (data) => { this.products = data }
+    );
+  }
+
+  deleteProduct(id:number){
+    this.productService.deleteProduct(id).subscribe(
+      (d: any) => { this.getProducts() }
+    );
+  }
+
+  editProduct(id:number){
+    this.router.navigate(['/product/edit/'+id]);
+  }
 }

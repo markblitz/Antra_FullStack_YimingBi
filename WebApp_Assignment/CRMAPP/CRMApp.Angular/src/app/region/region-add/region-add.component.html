@@ -1,15 +1,24 @@
+<div *ngIf="insertSuccessful" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Add success!</strong> Go to <a [routerLink]="'/region/index'">region index</a>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
 <h1>Create new region</h1>
 <hr/>
-<form #newRegion="ngForm" (submit)="insertRegion(newRegion)">
+
+<form [formGroup]="regionForm">
     <div class="row m-3">
         <div class="col-3">
             <label for="name">Name</label>
-            <input id="name" [(ngModel)]="region.name" name="name" class="form-control" />
+            <input id="name" formControlName="name" class="form-control" />
+            <div class="text-danger" *ngIf="regionForm.get('name')?.hasError('required') && regionForm.get('name')?.touched">
+                Region name is required!
+            </div>
         </div>
     </div>
 
     <div class="m-3">
-        <input type="submit" value="Add region" class="btn btn-primary" />
+        <input type="button" value="Add region" class="btn btn-primary" (click)="insertRegion()" [disabled]="!regionForm.valid"/>
     </div>
     
 </form>

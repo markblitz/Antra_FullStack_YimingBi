@@ -4,7 +4,10 @@ import { CustomerIndexComponent } from './customer-index/customer-index.componen
 import { CustomerAddComponent } from './customer-add/customer-add.component';
 import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 import { CustomerRoutingModule } from './customer-routing.module';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { CustomerService } from 'src/services/customer.service';
 
 
 
@@ -17,7 +20,12 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CustomerRoutingModule,
-    FormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule,
+  ],
+  providers: [
+    CustomerService
   ]
 })
 export class CustomerModule { }

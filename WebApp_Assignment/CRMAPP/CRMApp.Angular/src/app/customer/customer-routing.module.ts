@@ -7,7 +7,7 @@ import { CustomerIndexComponent } from "./customer-index/customer-index.componen
 const routes:Routes=[
     {path:'index', component:CustomerIndexComponent},
     {path:'add', component:CustomerAddComponent},
-    {path:'edit', component:CustomerEditComponent}
+    {path:'edit/:id', component:CustomerEditComponent}
 ]
 
 @NgModule(

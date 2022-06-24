@@ -24,7 +24,7 @@ export class CategoryEditComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
     private categoryService: CategoryService,
     builder: FormBuilder) {
-    activatedRoute.params.subscribe(d => { this.editId=d["id"] });
+    activatedRoute.params.subscribe(d => { this.editId = d["id"] });
     this.categoryForm = builder.group(
       {
         'name': new FormControl(null, [Validators.required]),
@@ -35,12 +35,12 @@ export class CategoryEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
   }
 
   getCategory() {
-    this.categoryService.getCategoryById(this.editId).subscribe(d => {
-      this.categoryForm.patchValue(d);
+    this.categoryService.getCategoryById(this.editId).subscribe(data => {
+      this.categoryForm.patchValue(data);
     });
   }
 

@@ -10,7 +10,7 @@ import { SupplierIndexComponent } from "./supplier-index/supplier-index.componen
 const routes:Routes=[
     {path:'index', component:SupplierIndexComponent},
     {path:'add', component:SupplierAddComponent},
-    {path:'edit', component:SupplierEditComponent}
+    {path:'edit/:id', component:SupplierEditComponent}
 ]
 
 @NgModule(

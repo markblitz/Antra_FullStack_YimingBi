@@ -7,13 +7,20 @@
             <th>Id</th>
             <th>Name</th>
             <th>Phone</th>
+            <th>Options</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let e of shippers">
-            <td>{{e.id}}</td>
-            <td>{{e.name}}</td>
-            <td>{{e.phone}}</td>
+        <tr *ngFor="let shipper of shippers">
+            <td>{{shipper.id}}</td>
+            <td>{{shipper.name}}</td>
+            <td>{{shipper.phone}}</td>
+            <td>
+                <a (click)="editShipper(shipper.id)" class="text-wrap">Edit</a>&nbsp;
+                <a (click)="deleteShipper(shipper.id)" class="text-wrap">Delete</a>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<input type="button" class="btn btn-primary" [routerLink]="'/shipper/add'" value="Add new shipper"/>

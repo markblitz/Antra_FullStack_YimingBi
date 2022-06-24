@@ -6,32 +6,33 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Supplier</th>
             <th>Category</th>
 
             <th>Quantity per unit</th>
             <th>Unit price</th>
             
             <th>Unit in stock</th>
-            <th>Units on order</th>
-            <th>Reorder level</th>
             <th>Discontinued</th>
+            <th >Options</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let e of products">
-            <td>{{e.id}}</td>
-            <td>{{e.name}}</td>
-            <td>{{e.supplierId}}</td>
-            <td>{{e.categoryId}}</td>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.category}}</td>
 
-            <td>{{e.quantityPerUnit}}</td>
-            <td>{{e.unitPrice}}</td>
+            <td>{{product.quantityPerUnit}}</td>
+            <td>{{product.unitPrice}}</td>
 
-            <td>{{e.unitInStock}}</td>
-            <td>{{e.unitsOnOrder}}</td>
-            <td>{{e.reorderLevel}}</td>
-            <td>{{e.discontinued}}</td>
+            <td>{{product.unitInStock}}</td>
+            <td>{{product.discontinued}}</td>
+            <td>
+                <a class="text-wrap" (click)="editProduct(product.id)">Edit</a>&nbsp;
+                <a class="text-wrap" (click)="deleteProduct(product.id)">Delete</a>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<input type="button" class="btn btn-primary" [routerLink]="'/product/add'" value="Add new product"/>

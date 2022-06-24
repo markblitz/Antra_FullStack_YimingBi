@@ -6,12 +6,19 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Options</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let e of regions">
-            <td>{{e.id}}</td>
-            <td>{{e.name}}</td>
+        <tr *ngFor="let region of regions">
+            <td>{{region.id}}</td>
+            <td>{{region.name}}</td>
+            <td>
+                <a (click)="editRegion(region.id)" class="text-wrap">Edit</a>&nbsp;
+                <a (click)="deleteRegion(region.id)" class="text-wrap">Delete</a>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<input type="button" class="btn btn-primary" [routerLink]="'/region/add'" value="Add new region"/>

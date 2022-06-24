@@ -7,7 +7,7 @@ import { EmployeeIndexComponent } from "./employee-index/employee-index.componen
 const routes:Routes=[
     {path:'index', component:EmployeeIndexComponent},
     {path:'add', component:EmployeeAddComponent},
-    {path:'edit', component:EmployeeEditComponent}
+    {path:'edit/:id', component:EmployeeEditComponent}
 ]
 
 @NgModule(

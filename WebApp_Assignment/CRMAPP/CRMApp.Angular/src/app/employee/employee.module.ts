@@ -4,7 +4,10 @@ import { EmployeeIndexComponent } from './employee-index/employee-index.componen
 import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeeRoutingModule } from './employee-routing.module';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { EmployeeService } from 'src/services/employee.service';
 
 
 
@@ -17,7 +20,12 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     EmployeeRoutingModule,
-    FormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule,
+  ],
+  providers: [
+    EmployeeService
   ]
 })
 export class EmployeeModule { }

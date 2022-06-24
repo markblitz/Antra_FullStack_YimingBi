@@ -1,7 +1,7 @@
 export interface ProductResponse{
-    id:string,
+    id:number,
     name:string,
-    categoryId:number,
+    category:string,
     quantityPerUnit:string,
     unitPrice:number,
     unitInStock:number,

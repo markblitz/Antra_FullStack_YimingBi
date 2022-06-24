@@ -1,1 +1,63 @@
-<p>customer-edit works!</p>
+<div *ngIf="editSuccessful" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Edit success!</strong> Go to <a [routerLink]="'/customer/index'">cutomer index</a>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<h1>Edit customer</h1>
+<hr/>
+
+<form [formGroup]="customerForm">
+    <div class="row m-3">
+        <div class="col-3">
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" class="form-control" />
+            <div class="text-danger" *ngIf="customerForm.get('name')?.hasError('required') && customerForm.get('name')?.touched">
+                Customer name is required!
+            </div>
+        </div>
+        <div class="col-3">
+            <label for="title">Title</label>
+            <input id="title" formControlName="title" class="form-control" />
+        </div>
+        <div class="col-3">
+            <label for="phone">Phone</label>
+            <input id="phone" formControlName="phone" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-6">
+            <label for="address">Address</label>
+            <input id="address" formControlName="address" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="city">City</label>
+            <input id="city" formControlName="city" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="postalCode">Postal code</label>
+            <input id="postalCode" formControlName="postalCode" class="form-control" />
+        </div>
+        <div class="col-2">
+            <label for="country">Country</label>
+            <input id="country" formControlName="country" class="form-control" />
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-3">
+            <label for="regionId">Region</label>
+            <select id="regionId" formControlName="regionId" class="form-control">
+                <option *ngFor="let region of regions, index as i" value={{i+1}}>{{region.name}}</option>
+            </select>
+            <div class="text-danger" *ngIf="customerForm.get('regionId')?.hasError('required') && customerForm.get('regionId')?.touched">
+                Customer region is required!
+            </div>
+        </div>
+    </div>
+
+    <div class="m-3">
+        <input type="button" value="Edit customer" class="btn btn-primary" (click)="saveCustomer()" [disabled]="!customerForm.valid"/>
+    </div>
+    
+</form>
