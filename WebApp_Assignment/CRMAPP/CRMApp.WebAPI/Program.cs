@@ -8,6 +8,8 @@ using CRMApp.Infrastructure.Repository;
 using CRMApp.WebAPI.Middleware;
 using Serilog;
 using Serilog.AspNetCore;
+using CRMApp.Core.Entity;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog();
@@ -15,6 +17,8 @@ builder.Host.UseSerilog();
 
 builder.Services.AddControllers();
 builder.Services.AddSqlServer<CrmDBContext>(builder.Configuration.GetConnectionString("OnlineCRM"));
+builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<CrmDBContext>().AddDefaultTokenProviders();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -34,6 +38,7 @@ builder.Services.AddScoped<IProductRepositoryAsync, ProductRepositoryAsync>();
 builder.Services.AddScoped<IRegionRepositoryAsync, RegionRepositoryAsync>();
 builder.Services.AddScoped<IShipperRepositoryAsync, ShipperRepositoryAsync>();
 builder.Services.AddScoped<ISupplierRepositoryAsync, SupplierRepositoryAsync>();
+builder.Services.AddScoped<IAccountRepositoryAsync, AccountRepositoryAsync>();
 
 // Dependency injection for services
 builder.Services.AddScoped<ICategoryServiceAsync, CategoryServiceAsync>();
@@ -43,6 +48,7 @@ builder.Services.AddScoped<IProductServiceAsync, ProductServiceAsync>();
 builder.Services.AddScoped<IRegionServiceAsync, RegionServiceAsync>();
 builder.Services.AddScoped<IShipperServiceAsync, ShipperServiceAsync>();
 builder.Services.AddScoped<ISupplierServiceAsync, SupplierServiceAsync>();
+builder.Services.AddScoped<IAccountServiceAsync, AccountServiceAsync>();
 
 var app = builder.Build();
 

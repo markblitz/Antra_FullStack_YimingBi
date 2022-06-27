@@ -1,0 +1,57 @@
+<div *ngIf="signUpSuccessful" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Sign up success!</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<h1>Create new account</h1>
+<hr/>
+<form [formGroup]="accountForm">
+    <div class="row m-3">
+        <div class="col-3">
+            <label for="firstName">First name</label>
+            <input id="firstName" formControlName="firstName" class="form-control" />
+            <div class="text-danger" *ngIf="accountForm.get('firstName')?.hasError('required') && accountForm.get('firstName')?.touched">
+                First name is required!
+            </div>
+        </div>
+        <div class="col-3">
+            <label for="lastName">Last name</label>
+            <input id="lastName" formControlName="lastName" class="form-control" />
+            <div class="text-danger" *ngIf="accountForm.get('lastName')?.hasError('required') && accountForm.get('lastName')?.touched">
+                Last name is required!
+            </div>
+        </div>
+        <div class="col-6">
+            <label for="Email">Email</label>
+            <input id="Email" formControlName="Email" class="form-control" />
+            <div class="text-danger" *ngIf="accountForm.get('Email')?.hasError('required') && accountForm.get('Email')?.touched">
+                Email is required!
+            </div>
+            <div class="text-danger" *ngIf="accountForm.get('Email')?.hasError('email') && accountForm.get('Email')?.touched">
+                Email is invalid!
+            </div>
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-3">
+            <label for="password">Password</label>
+            <input id="password" formControlName="password" class="form-control" type="password"/>
+            <div class="text-danger" *ngIf="accountForm.get('password')?.hasError('required') && accountForm.get('password')?.touched">
+                Password is required!
+            </div>
+        </div>
+        <div class="col-3">
+            <label for="confirmPassword">Confirm password</label>
+            <input id="confirmPassword" formControlName="confirmPassword" class="form-control" type="password"/>
+            <div class="text-danger" *ngIf="accountForm.get('confirmPassword')?.hasError('required') && accountForm.get('confirmPassword')?.touched">
+                Confirm password is required!
+            </div>
+        </div>
+    </div>
+
+    <div class="m-3">
+        <input type="button" value="Add account" class="btn btn-primary" (click)="addAcount()" [disabled]="!accountForm.valid"/>
+    </div>
+    
+</form>

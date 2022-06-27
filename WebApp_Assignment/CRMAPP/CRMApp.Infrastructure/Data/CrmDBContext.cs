@@ -5,10 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace CRMApp.Infrastructure.Data
 {
-    public class CrmDBContext:DbContext
+    public class CrmDBContext:IdentityDbContext<User>
     {
         public CrmDBContext(DbContextOptions<CrmDBContext> option):base(option)
         {

@@ -73,3 +73,8 @@ C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAP
 C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMAPP.WebMVC\bin\Debug\net6.0\CRMApp.Infrastructure.pdb
 C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMAPP.WebMVC\bin\Debug\net6.0\CRMApp.Core.pdb
 C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMAPP.WebMVC\obj\Debug\net6.0\CRMApp.WebMVC.csproj.CopyComplete
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMAPP.WebMVC\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMAPP.WebMVC\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMAPP.WebMVC\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMAPP.WebMVC\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\blitz\Documents\GitHub\Antra_FullStack_YimingBi\WebApp_Assignment\CRMAPP\CRMAPP.WebMVC\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
